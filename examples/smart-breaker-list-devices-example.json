@@ -1,0 +1,35 @@
+{
+  "request": {
+    "method": "GET",
+    "url": "https://api.em.eaton.com/api/v1/devices?locationId=8b9d2c41-5e83-4b9e-8c43-1f0a8a6b0d33",
+    "headers": {
+      "Em-Api-Subscription-Key": "{SMART_BREAKER_API_KEY}",
+      "Authorization": "Bearer {AUTH_TOKEN}"
+    }
+  },
+  "response": {
+    "status": 200,
+    "body": [
+      {
+        "id": "f4a8d3a2-4f0c-4a8e-9b13-2e85a0fc8a91",
+        "locationId": "8b9d2c41-5e83-4b9e-8c43-1f0a8a6b0d33",
+        "hardwareType": "emcb",
+        "sku": "BRP120AF",
+        "serialNumber": "AE-CB-000001",
+        "chargerStationId": null,
+        "name": "Kitchen Range",
+        "firmwareVersion": "3.4.1"
+      },
+      {
+        "id": "9d23b441-3c5e-49b0-822a-c1f7e0aa53cd",
+        "locationId": "8b9d2c41-5e83-4b9e-8c43-1f0a8a6b0d33",
+        "hardwareType": "ev-emcb",
+        "sku": "BREVEM2040",
+        "serialNumber": "GM-EV-000017",
+        "chargerStationId": "garage-1",
+        "name": "Garage EV Charger",
+        "firmwareVersion": "4.0.2"
+      }
+    ]
+  }
+}

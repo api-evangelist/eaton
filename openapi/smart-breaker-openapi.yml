@@ -1,0 +1,420 @@
+openapi: 3.0.3
+info:
+  title: Eaton Smart Breaker API
+  description: |
+    REST API (formerly the Energy Management / EM API) for Eaton AbleEdge Smart Breakers and Eaton Green Motion EV Smart Breaker Chargers. Lets developers commission, monitor, and control devices, model panels and locations, run batch commands, and pull real-time and historical energy telemetry. Devices are typed via `hardwareType` — `emcb` for standard smart breakers, `ev-emcb` for EV chargers.
+
+    Authentication: every request must include `Em-Api-Subscription-Key: {SMART_BREAKER_API_KEY}` and `Authorization: Bearer {AUTH_TOKEN}`. Tokens are obtained from the OAuth2 token endpoint via Client ID + secret (Base64-encoded Basic auth) and are valid for 1 hour.
+
+    This OpenAPI spec is reconstructed from the public Eaton developer-portal documentation (https://api.em.eaton.com/docs and https://api.em.eaton.com/preview/docs) and the AbleEdge Smart Breaker developer portal (https://portal.em.eaton.com/). It is intended for cataloging and capability mapping in API Evangelist tooling, not as a substitute for the authoritative provider spec.
+  version: '1.0.0'
+  contact:
+    name: Eaton AbleEdge Developer Portal
+    url: https://portal.em.eaton.com/
+  license:
+    name: Eaton Brightlayer Experience Hub Terms
+    url: https://www.eaton.com/us/en-us/company/policies-and-statements/brightlayer-experience-hub-terms-and-conditions.html
+  x-source: https://api.em.eaton.com/docs
+  x-spec-status: reconstructed-from-public-docs
+servers:
+  - url: https://api.em.eaton.com
+    description: Production
+  - url: https://api.em.eaton.com/preview
+    description: Preview (forward-looking, opt-in)
+tags:
+  - name: Authorization
+    description: OAuth2 token issuance and user/service-account authentication.
+  - name: Organizations
+    description: Tenant organizations that own devices and users.
+  - name: Locations
+    description: Sites, buildings, and panels grouping devices.
+  - name: Devices
+    description: Smart breakers and EV chargers (emcb, ev-emcb).
+  - name: Device Commands
+    description: Per-device and batch device-control commands.
+  - name: Energy Data
+    description: Real-time and historical energy telemetry.
+  - name: Events
+    description: Device events, alarms, and notifications.
+  - name: EV Only
+    description: Operations supported only by Eaton EV Smart Breaker Chargers.
+paths:
+  /oauth2/token:
+    post:
+      tags: [Authorization]
+      summary: Issue OAuth2 Bearer Token
+      description: Exchange Client ID + secret (Base64-encoded as Basic auth) for a Bearer access token valid for 1 hour.
+      requestBody:
+        required: true
+        content:
+          application/x-www-form-urlencoded:
+            schema:
+              type: object
+              required: [grant_type]
+              properties:
+                grant_type:
+                  type: string
+                  enum: [client_credentials]
+      responses:
+        '200':
+          description: Token issued
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/AccessToken'
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+  /api/v1/organizations:
+    get:
+      tags: [Organizations]
+      summary: List Organizations
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: array
+                items: { $ref: '#/components/schemas/Organization' }
+  /api/v1/organizations/{organizationId}:
+    parameters:
+      - $ref: '#/components/parameters/OrganizationId'
+    get:
+      tags: [Organizations]
+      summary: Get Organization
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema: { $ref: '#/components/schemas/Organization' }
+  /api/v1/locations:
+    get:
+      tags: [Locations]
+      summary: List Locations
+      parameters:
+        - in: query
+          name: organizationId
+          schema: { type: string, format: uuid }
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: array
+                items: { $ref: '#/components/schemas/Location' }
+  /api/v1/locations/{locationId}:
+    parameters:
+      - $ref: '#/components/parameters/LocationId'
+    get:
+      tags: [Locations]
+      summary: Get Location
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema: { $ref: '#/components/schemas/Location' }
+  /api/v1/devices:
+    get:
+      tags: [Devices]
+      summary: List Devices
+      description: List devices, optionally filtered by location.
+      parameters:
+        - in: query
+          name: locationId
+          schema: { type: string, format: uuid }
+        - in: query
+          name: hardwareType
+          schema:
+            type: string
+            enum: [emcb, ev-emcb]
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: array
+                items: { $ref: '#/components/schemas/Device' }
+  /api/v1/devices/{deviceId}:
+    parameters:
+      - $ref: '#/components/parameters/DeviceId'
+    get:
+      tags: [Devices]
+      summary: Get Device
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema: { $ref: '#/components/schemas/Device' }
+    delete:
+      tags: [Devices]
+      summary: Decommission Device
+      responses:
+        '204': { description: Device decommissioned }
+  /api/v1/devices/{deviceId}/state:
+    parameters:
+      - $ref: '#/components/parameters/DeviceId'
+    get:
+      tags: [Devices]
+      summary: Get Device State
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema: { $ref: '#/components/schemas/DeviceState' }
+  /api/v1/devices/{deviceId}/commands:
+    parameters:
+      - $ref: '#/components/parameters/DeviceId'
+    post:
+      tags: [Device Commands]
+      summary: Send Device Command
+      description: Send an on/off/cycle command to a single device.
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema: { $ref: '#/components/schemas/DeviceCommand' }
+      responses:
+        '202':
+          description: Command accepted
+          content:
+            application/json:
+              schema: { $ref: '#/components/schemas/CommandReceipt' }
+  /api/v1/deviceBatchCommands:
+    post:
+      tags: [Device Commands]
+      summary: Send Batch Device Commands
+      description: Send a single command to many devices in one request.
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema: { $ref: '#/components/schemas/BatchDeviceCommand' }
+      responses:
+        '202':
+          description: Batch accepted
+          content:
+            application/json:
+              schema: { $ref: '#/components/schemas/BatchCommandReceipt' }
+  /api/v1/devices/{deviceId}/energy:
+    parameters:
+      - $ref: '#/components/parameters/DeviceId'
+    get:
+      tags: [Energy Data]
+      summary: Get Device Energy Telemetry
+      parameters:
+        - in: query
+          name: start
+          schema: { type: string, format: date-time }
+        - in: query
+          name: end
+          schema: { type: string, format: date-time }
+        - in: query
+          name: interval
+          schema: { type: string, enum: [1m, 5m, 15m, 1h, 1d] }
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: array
+                items: { $ref: '#/components/schemas/EnergyReading' }
+  /api/v1/devices/{deviceId}/events:
+    parameters:
+      - $ref: '#/components/parameters/DeviceId'
+    get:
+      tags: [Events]
+      summary: List Device Events
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: array
+                items: { $ref: '#/components/schemas/DeviceEvent' }
+  /api/v1/ev/{deviceId}/sessions:
+    parameters:
+      - $ref: '#/components/parameters/DeviceId'
+    get:
+      tags: [EV Only]
+      summary: List EV Charging Sessions
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: array
+                items: { $ref: '#/components/schemas/ChargingSession' }
+  /api/v1/ev/{deviceId}/sessions/{sessionId}:
+    parameters:
+      - $ref: '#/components/parameters/DeviceId'
+      - in: path
+        name: sessionId
+        required: true
+        schema: { type: string, format: uuid }
+    get:
+      tags: [EV Only]
+      summary: Get EV Charging Session
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema: { $ref: '#/components/schemas/ChargingSession' }
+components:
+  securitySchemes:
+    OAuth2:
+      type: oauth2
+      flows:
+        clientCredentials:
+          tokenUrl: https://api.em.eaton.com/oauth2/token
+          scopes: {}
+    SubscriptionKey:
+      type: apiKey
+      in: header
+      name: Em-Api-Subscription-Key
+  parameters:
+    OrganizationId:
+      in: path
+      name: organizationId
+      required: true
+      schema: { type: string, format: uuid }
+    LocationId:
+      in: path
+      name: locationId
+      required: true
+      schema: { type: string, format: uuid }
+    DeviceId:
+      in: path
+      name: deviceId
+      required: true
+      schema: { type: string, format: uuid }
+  responses:
+    Unauthorized:
+      description: Missing or invalid credentials
+      content:
+        application/json:
+          schema: { $ref: '#/components/schemas/Error' }
+  schemas:
+    AccessToken:
+      type: object
+      required: [access_token, token_type, expires_in]
+      properties:
+        access_token: { type: string }
+        token_type: { type: string, enum: [Bearer] }
+        expires_in: { type: integer, description: Token lifetime in seconds (typically 3600) }
+    Organization:
+      type: object
+      properties:
+        id: { type: string, format: uuid }
+        name: { type: string }
+    Location:
+      type: object
+      properties:
+        id: { type: string, format: uuid }
+        organizationId: { type: string, format: uuid }
+        name: { type: string }
+        address:
+          type: object
+          properties:
+            street: { type: string }
+            city: { type: string }
+            region: { type: string }
+            postalCode: { type: string }
+            country: { type: string }
+        timezone: { type: string }
+    Device:
+      type: object
+      required: [id, locationId, hardwareType]
+      properties:
+        id: { type: string, format: uuid }
+        locationId: { type: string, format: uuid }
+        hardwareType:
+          type: string
+          enum: [emcb, ev-emcb]
+        sku: { type: string }
+        serialNumber: { type: string }
+        chargerStationId: { type: string, nullable: true }
+        name: { type: string }
+        firmwareVersion: { type: string }
+    DeviceState:
+      type: object
+      properties:
+        deviceId: { type: string, format: uuid }
+        position: { type: string, enum: [open, closed, tripped] }
+        connectivity: { type: string, enum: [online, offline] }
+        lastReportedAt: { type: string, format: date-time }
+    DeviceCommand:
+      type: object
+      required: [command]
+      properties:
+        command:
+          type: string
+          enum: [open, close, cycle]
+        reason: { type: string }
+    BatchDeviceCommand:
+      type: object
+      required: [deviceIds, command]
+      properties:
+        deviceIds:
+          type: array
+          items: { type: string, format: uuid }
+        command: { $ref: '#/components/schemas/DeviceCommand' }
+    CommandReceipt:
+      type: object
+      properties:
+        commandId: { type: string, format: uuid }
+        status: { type: string, enum: [accepted, queued, executing, completed, failed] }
+        createdAt: { type: string, format: date-time }
+    BatchCommandReceipt:
+      type: object
+      properties:
+        batchId: { type: string, format: uuid }
+        receipts:
+          type: array
+          items: { $ref: '#/components/schemas/CommandReceipt' }
+    EnergyReading:
+      type: object
+      properties:
+        timestamp: { type: string, format: date-time }
+        current: { type: number, description: Amps }
+        voltage: { type: number, description: Volts }
+        frequency: { type: number, description: Hertz }
+        activePower: { type: number, description: Watts }
+        energy: { type: number, description: Watt-hours consumed in the interval }
+    DeviceEvent:
+      type: object
+      properties:
+        id: { type: string, format: uuid }
+        deviceId: { type: string, format: uuid }
+        type: { type: string, enum: [trip, overcurrent, undervoltage, overvoltage, offline, online, commandFailed, custom] }
+        severity: { type: string, enum: [info, warning, error, critical] }
+        timestamp: { type: string, format: date-time }
+        message: { type: string }
+    ChargingSession:
+      type: object
+      properties:
+        id: { type: string, format: uuid }
+        deviceId: { type: string, format: uuid }
+        startedAt: { type: string, format: date-time }
+        endedAt: { type: string, format: date-time, nullable: true }
+        energyDelivered: { type: number, description: Watt-hours }
+        peakPower: { type: number, description: Watts }
+        status: { type: string, enum: [active, completed, faulted, cancelled] }
+    Error:
+      type: object
+      properties:
+        code: { type: string }
+        message: { type: string }
+        details: { type: object, additionalProperties: true }
+security:
+  - OAuth2: []
+    SubscriptionKey: []

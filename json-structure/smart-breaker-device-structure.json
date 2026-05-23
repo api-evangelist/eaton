@@ -1,0 +1,65 @@
+{
+  "title": "Smart Breaker Device Structure",
+  "description": "Hierarchical structure of how Eaton Smart Breaker API resources nest.",
+  "structure": {
+    "Organization": {
+      "id": "uuid",
+      "name": "string",
+      "locations": [
+        {
+          "id": "uuid",
+          "name": "string",
+          "address": {
+            "street": "string",
+            "city": "string",
+            "region": "string",
+            "postalCode": "string",
+            "country": "string"
+          },
+          "timezone": "string",
+          "devices": [
+            {
+              "id": "uuid",
+              "hardwareType": "emcb | ev-emcb",
+              "sku": "string",
+              "serialNumber": "string",
+              "firmwareVersion": "string",
+              "state": {
+                "position": "open | closed | tripped",
+                "connectivity": "online | offline",
+                "lastReportedAt": "datetime"
+              },
+              "energy": [
+                {
+                  "timestamp": "datetime",
+                  "current": "amps",
+                  "voltage": "volts",
+                  "frequency": "hertz",
+                  "activePower": "watts",
+                  "energy": "watt-hours"
+                }
+              ],
+              "events": [
+                {
+                  "type": "trip | overcurrent | undervoltage | overvoltage | offline | online | commandFailed",
+                  "severity": "info | warning | error | critical",
+                  "timestamp": "datetime"
+                }
+              ],
+              "chargingSessions (ev-emcb only)": [
+                {
+                  "id": "uuid",
+                  "startedAt": "datetime",
+                  "endedAt": "datetime?",
+                  "energyDelivered": "watt-hours",
+                  "peakPower": "watts",
+                  "status": "active | completed | faulted | cancelled"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  }
+}

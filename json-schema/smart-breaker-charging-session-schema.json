@@ -1,0 +1,17 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/api-evangelist/eaton/blob/main/json-schema/smart-breaker-charging-session-schema.json",
+  "title": "ChargingSession",
+  "description": "A single EV charging session on an ev-emcb device.",
+  "type": "object",
+  "required": ["id", "deviceId", "startedAt", "status"],
+  "properties": {
+    "id": { "type": "string", "format": "uuid" },
+    "deviceId": { "type": "string", "format": "uuid" },
+    "startedAt": { "type": "string", "format": "date-time" },
+    "endedAt": { "type": ["string", "null"], "format": "date-time" },
+    "energyDelivered": { "type": "number", "description": "Watt-hours delivered to the vehicle" },
+    "peakPower": { "type": "number", "description": "Peak charging power (Watts)" },
+    "status": { "type": "string", "enum": ["active", "completed", "faulted", "cancelled"] }
+  }
+}

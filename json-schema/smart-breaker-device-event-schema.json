@@ -1,0 +1,16 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/api-evangelist/eaton/blob/main/json-schema/smart-breaker-device-event-schema.json",
+  "title": "DeviceEvent",
+  "description": "A discrete event raised by an Eaton smart breaker or EV charger (trip, overcurrent, undervoltage, connectivity, etc).",
+  "type": "object",
+  "required": ["id", "deviceId", "type", "severity", "timestamp"],
+  "properties": {
+    "id": { "type": "string", "format": "uuid" },
+    "deviceId": { "type": "string", "format": "uuid" },
+    "type": { "type": "string", "enum": ["trip", "overcurrent", "undervoltage", "overvoltage", "offline", "online", "commandFailed", "custom"] },
+    "severity": { "type": "string", "enum": ["info", "warning", "error", "critical"] },
+    "timestamp": { "type": "string", "format": "date-time" },
+    "message": { "type": "string" }
+  }
+}

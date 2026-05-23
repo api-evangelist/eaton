@@ -1,0 +1,51 @@
+name: Eaton — FinOps Surface
+description: |
+  Alignment of Eaton's commercial digital surface to the FinOps Foundation Framework and FOCUS data spec. Eaton is not a public cloud provider; its FinOps-relevant surface is (a) Brightlayer SaaS / on-premise subscriptions purchased via the Brightlayer Experience Hub, (b) per-API subscription metering (Smart Breaker, EV Charger, Ambient Monitoring), and (c) partner-set pricing for solutions listed on the Experience Hub.
+specification: FinOps Framework / FOCUS 1.0 alignment
+provider: eaton
+modified: '2026-05-23'
+sources:
+  - https://www.eaton.com/us/en-us/digital/brightlayer-experience-hub.html
+  - https://eaton.byappdirect.com/
+  - https://www.eaton.com/us/en-us/company/policies-and-statements/brightlayer-experience-hub-terms-and-conditions.html
+
+surface:
+  billingChannel: Brightlayer Experience Hub (powered by AppDirect at eaton.byappdirect.com)
+  invoiceModel:
+    - Subscription invoices issued by Eaton for Brightlayer first-party software (Power, Distributed IT, DCIM, EPMS) and Eaton-developed APIs (Smart Breaker, EV Charger, Ambient Monitoring, Demand Response).
+    - Partner-set invoices issued by Solution Partners (e.g. WES for CI-Data Open API) per partner-specific terms.
+
+focusAlignment:
+  ProviderName: Eaton Corporation plc
+  PublisherName: Eaton (first-party offerings) or Solution Partner (partner-listed offerings)
+  ServiceCategory:
+    - Compute (Brightlayer DCIM optimization)
+    - Storage / Telemetry (Brightlayer EPMS, Smart Breaker API historical energy data)
+    - Networking / IoT (Smart Breaker API, EV Charger API, DRMS APIs)
+    - AI/ML (Smart Ambient Monitoring API, Brightlayer Digital Energy Twin)
+  ChargeCategory: Usage | Subscription | Partner Pass-Through
+  PricingCategory: Standard (subscription) | Partner (partner-set) | Open Source (free for Brightlayer UI)
+  PricingUnit:
+    - per-tenant-subscription
+    - per-breaker (Smart Breaker / Ambient Monitoring)
+    - per-charger (EV Charger)
+    - per-utility-program (Demand Response)
+    - per-site / per-rack (DCIM / EPMS / PDU)
+  BillingPeriod: Monthly or annual depending on contract
+
+costAllocationDimensions:
+  - tenant / organization
+  - location / site / building
+  - panel
+  - device (breaker or EV charger)
+  - utility DR program
+  - product line (Brightlayer Power vs DCIM vs EPMS)
+
+unitEconomicsExamples:
+  - description: EV-charger energy cost per kWh delivered
+    inputs: [activePower telemetry, ChargingSession.energyDelivered, utility tariff]
+    output: cost per session and cost per kWh, attributable per ev-emcb device
+
+  - description: Building load-shed value during DR event
+    inputs: [pre-event baseline, post-event metered load, DR program incentive rate]
+    output: kWh shed and $ credited per breaker per event

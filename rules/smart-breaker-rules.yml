@@ -1,0 +1,65 @@
+extends: [[spectral:oas, all]]
+documentationUrl: https://api.em.eaton.com/docs
+rules:
+  eaton-info-contact:
+    description: Info object MUST identify the Eaton AbleEdge Developer Portal as contact.
+    severity: warn
+    given: $.info
+    then:
+      - field: contact.url
+        function: pattern
+        functionOptions:
+          match: "portal.em.eaton.com|api.em.eaton.com|developer.eaton.com"
+
+  eaton-bearer-and-subscription-key:
+    description: All Eaton EM API operations MUST require both OAuth2 Bearer and Em-Api-Subscription-Key.
+    severity: error
+    given: $
+    then:
+      - field: components.securitySchemes.OAuth2
+        function: truthy
+      - field: components.securitySchemes.SubscriptionKey
+        function: truthy
+
+  eaton-subscription-key-header-name:
+    description: The subscription-key apiKey scheme MUST use header name `Em-Api-Subscription-Key`.
+    severity: error
+    given: $.components.securitySchemes[?(@.type=='apiKey')]
+    then:
+      - field: name
+        function: pattern
+        functionOptions:
+          match: "^Em-Api-Subscription-Key$"
+
+  eaton-title-case-summary:
+    description: Operation summaries MUST be in Title Case.
+    severity: warn
+    given: $.paths.*[get,post,put,patch,delete].summary
+    then:
+      function: pattern
+      functionOptions:
+        match: "^([A-Z][a-zA-Z0-9]*)(\\s+[A-Z][a-zA-Z0-9]*)*$"
+
+  eaton-hardware-type-enum:
+    description: Device.hardwareType MUST be one of `emcb` or `ev-emcb`.
+    severity: error
+    given: $.components.schemas.Device.properties.hardwareType
+    then:
+      field: enum
+      function: schema
+      functionOptions:
+        schema:
+          type: array
+          items: { type: string, enum: [emcb, ev-emcb] }
+
+  eaton-ev-only-tag:
+    description: EV-charger operations MUST be tagged `EV Only`.
+    severity: warn
+    given: $.paths[?(@property =~ /\/ev\//)][get,post,put,patch,delete]
+    then:
+      field: tags
+      function: schema
+      functionOptions:
+        schema:
+          type: array
+          contains: { const: "EV Only" }

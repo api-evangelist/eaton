@@ -1,0 +1,112 @@
+name: Eaton Vocabulary
+description: |
+  Operational, capability, product, and partnership vocabulary used across Eaton's digital surface — Brightlayer (Data Centers, Utilities, Industrial, Buildings, Mobility), the developer-portal API catalog, the Smart Breaker / EV Charger APIs, the Brightlayer Experience Hub marketplace, and AI-factory partnerships.
+version: 0.1.0
+modified: '2026-05-23'
+
+products:
+  - name: Brightlayer
+    description: Eaton's intelligent digital portfolio spanning Data Centers, Utilities, Industrial, Buildings, and Mobility.
+  - name: Brightlayer Data Centers Suite
+    description: DCIM + Distributed IT + DCPM + EPMS software for managing power, cooling, space, and connectivity in data centers.
+  - name: Brightlayer Utilities Suite
+    description: Utility-facing software including Demand Response Management System (DRMS) and DR Analytics.
+  - name: Brightlayer Industrial Suite
+    description: Industrial power management including Power Xpert Protection Manager and Power Xpert Dashboard.
+  - name: Brightlayer Buildings Suite
+    description: Building energy management and lifecycle optimization (co-developed with Autodesk Tandem).
+  - name: Brightlayer Mobility Suite
+    description: EV charging and fleet eMobility management.
+  - name: Brightlayer Power
+    description: One of the four Brightlayer 8.0 on-premise offerings, focused on intelligent power management.
+  - name: Brightlayer Distributed IT
+    description: Performance management for distributed IT and edge UPS/PDU fleets.
+  - name: Brightlayer DCIM
+    description: Data Center Infrastructure Management.
+  - name: Brightlayer EPMS
+    description: Electrical Power Monitoring System.
+  - name: Brightlayer Experience Hub
+    description: Marketplace where customers and partners discover, purchase, and develop Brightlayer-built solutions.
+  - name: Brightlayer UI
+    description: Open-source design system and component libraries for React, Angular, and React Native used to build Brightlayer apps.
+  - name: AbleEdge Smart Breaker
+    description: Eaton's smart circuit breaker line for residential and commercial loads.
+  - name: Green Motion EV Smart Breaker Charger
+    description: Level-2 EV chargers integrated with the AbleEdge platform (hardwareType ev-emcb).
+  - name: Rack PDU G4
+    description: Eaton (formerly Tripp Lite) intelligent rack PDU with NMC exposing REST, SNMPv3, and Modbus TCP.
+  - name: Beam Rubin DSX
+    description: Eaton + NVIDIA reference architecture for end-to-end AI factories on the NVIDIA Vera Rubin platform with 800 VDC power.
+  - name: Digital Energy Twin
+    description: AI-powered building / data-center digital twin co-developed with Autodesk Tandem on top of Brightlayer.
+
+apis:
+  - name: Eaton Smart Breaker API
+    aliases: [EM API, Energy Management API]
+  - name: Eaton EV Smart Breaker Charger API
+  - name: Eaton Smart Ambient Monitoring API
+  - name: Brightlayer Demand Response Service API
+  - name: Brightlayer Operations Insight APIs
+  - name: Brightlayer RESTful API (On-Premise)
+  - name: Eaton Rack PDU G4 REST API
+  - name: CI-Data Open API (by WES)
+  - name: Eaton easyE4 JSON API
+
+terms:
+  - term: emcb
+    definition: hardwareType identifier for a standard Eaton AbleEdge Smart Breaker.
+  - term: ev-emcb
+    definition: hardwareType identifier for an Eaton Green Motion EV Smart Breaker Charger.
+  - term: Em-Api-Subscription-Key
+    definition: Required HTTP header carrying the customer/developer subscription key for all Eaton EM API requests.
+  - term: DRMS
+    definition: Demand Response Management System — Eaton's utility platform that orchestrates load-control switches.
+  - term: DCIM
+    definition: Data Center Infrastructure Management — Brightlayer module for end-to-end data-center operations.
+  - term: DCPM
+    definition: Data Center Performance Management — Brightlayer's holistic view of space, power, cooling, and connectivity.
+  - term: EPMS
+    definition: Electrical Power Monitoring System — Brightlayer module for electrical-system telemetry and alarms.
+  - term: NMC
+    definition: Network Management Card — embedded controller on Eaton Rack PDU G4 that exposes the REST API.
+  - term: 800 VDC
+    definition: Next-generation DC power architecture for AI factories advanced by Eaton/NVIDIA with the Beam Rubin DSX platform.
+  - term: Vera Rubin
+    definition: NVIDIA's GPU/AI platform used as the deployment target for the Eaton Beam Rubin DSX reference architecture.
+
+partnerships:
+  - partner: NVIDIA
+    description: Co-developed Eaton Beam Rubin DSX platform for end-to-end AI-factory deployment with 800 VDC architecture.
+  - partner: Autodesk
+    description: Co-developed Brightlayer Digital Energy Twin (Brightlayer + Autodesk Tandem) for buildings and data centers.
+  - partner: Siemens Energy
+    description: Helping address global power bottlenecks for AI factories by enabling simultaneous data-center + onsite power build-out.
+  - partner: Microsoft Azure
+    description: Brightlayer hosting + telemetry pipelines run on Azure cloud infrastructure.
+
+segments:
+  - Power Management
+  - Electrical
+  - Aerospace
+  - Vehicle
+  - eMobility
+  - Hydraulics (divested 2021)
+
+tags:
+  - Power Management
+  - Electrical
+  - Smart Breaker
+  - EV Charging
+  - Demand Response
+  - Data Center
+  - DCIM
+  - PDU
+  - UPS
+  - Utility
+  - Industrial
+  - Building
+  - Mobility
+  - AI Factory
+  - Energy
+  - IoT
+  - Sustainability

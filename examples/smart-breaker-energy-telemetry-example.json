@@ -1,0 +1,31 @@
+{
+  "request": {
+    "method": "GET",
+    "url": "https://api.em.eaton.com/api/v1/devices/f4a8d3a2-4f0c-4a8e-9b13-2e85a0fc8a91/energy?start=2026-05-22T00:00:00Z&end=2026-05-23T00:00:00Z&interval=15m",
+    "headers": {
+      "Em-Api-Subscription-Key": "{SMART_BREAKER_API_KEY}",
+      "Authorization": "Bearer {AUTH_TOKEN}"
+    }
+  },
+  "response": {
+    "status": 200,
+    "body": [
+      {
+        "timestamp": "2026-05-22T17:00:00Z",
+        "current": 12.4,
+        "voltage": 241.1,
+        "frequency": 60.0,
+        "activePower": 2987.6,
+        "energy": 746.9
+      },
+      {
+        "timestamp": "2026-05-22T17:15:00Z",
+        "current": 13.1,
+        "voltage": 240.8,
+        "frequency": 60.0,
+        "activePower": 3154.5,
+        "energy": 788.6
+      }
+    ]
+  }
+}

@@ -1,0 +1,16 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/api-evangelist/eaton/blob/main/json-schema/smart-breaker-energy-reading-schema.json",
+  "title": "EnergyReading",
+  "description": "A single interval-bucketed energy telemetry sample emitted by an Eaton smart breaker or EV charger.",
+  "type": "object",
+  "required": ["timestamp"],
+  "properties": {
+    "timestamp": { "type": "string", "format": "date-time" },
+    "current": { "type": "number", "description": "Amps" },
+    "voltage": { "type": "number", "description": "Volts" },
+    "frequency": { "type": "number", "description": "Hertz" },
+    "activePower": { "type": "number", "description": "Watts" },
+    "energy": { "type": "number", "description": "Watt-hours consumed in the interval" }
+  }
+}

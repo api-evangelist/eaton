@@ -1,0 +1,38 @@
+name: Eaton EV Charging Capability
+description: |
+  Workflow-oriented capability composition for managing Eaton Green Motion EV Smart Breaker Chargers (hardwareType ev-emcb) via the Eaton Smart Breaker API.
+version: 0.1.0
+provider: eaton
+sourceApi: openapi/smart-breaker-openapi.yml
+tags:
+  - EV Charging
+  - Green Motion
+  - Sessions
+  - Energy
+
+workflows:
+  - id: provision-and-monitor-charger
+    name: Provision And Monitor An EV Charger
+    steps:
+      - capability: list-devices
+        with:
+          hardwareType: ev-emcb
+      - capability: get-device-state
+      - capability: get-energy-telemetry
+
+  - id: end-of-day-billing-report
+    name: End-Of-Day Charger Billing Report
+    steps:
+      - capability: list-charging-sessions
+      - capability: get-energy-telemetry
+
+  - id: mass-load-shed
+    name: Mass Load Shed Across Chargers
+    description: For utility / building-energy programs — shed many chargers at once during peak.
+    steps:
+      - capability: list-devices
+        with:
+          hardwareType: ev-emcb
+      - capability: batch-device-command
+        with:
+          command: open

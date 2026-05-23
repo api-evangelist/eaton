@@ -1,0 +1,18 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/api-evangelist/eaton/blob/main/json-schema/smart-breaker-device-schema.json",
+  "title": "Device",
+  "description": "An Eaton AbleEdge Smart Breaker or Green Motion EV Smart Breaker Charger as represented by the Smart Breaker API.",
+  "type": "object",
+  "required": ["id", "locationId", "hardwareType"],
+  "properties": {
+    "id": { "type": "string", "format": "uuid" },
+    "locationId": { "type": "string", "format": "uuid" },
+    "hardwareType": { "type": "string", "enum": ["emcb", "ev-emcb"] },
+    "sku": { "type": "string" },
+    "serialNumber": { "type": "string" },
+    "chargerStationId": { "type": ["string", "null"] },
+    "name": { "type": "string" },
+    "firmwareVersion": { "type": "string" }
+  }
+}

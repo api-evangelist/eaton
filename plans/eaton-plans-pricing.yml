@@ -1,0 +1,89 @@
+name: Eaton — Plans and Pricing
+description: |
+  Plans, pricing tiers, and commercial-model summary for Eaton's digital and developer surface. Public pricing is largely opaque — most Brightlayer offerings and the Smart Breaker / EV Charger / Demand Response / Ambient Monitoring APIs are sold via the Brightlayer Experience Hub (https://eaton.byappdirect.com/) on subscription, with terms negotiated per-tenant rather than published. Where Eaton has made commercial structure public (e.g. Brightlayer 8.0 "tier-free" model), it is captured below.
+specification: API Commons Plans 0.1
+provider: eaton
+modified: '2026-05-23'
+sources:
+  - https://www.eaton.com/us/en-us/company/news-insights/blog/brightlayer-8-0-release-whatsnew.html
+  - https://www.eaton.com/us/en-us/digital/brightlayer-experience-hub.html
+  - https://eaton.byappdirect.com/
+  - https://www.eaton.com/us/en-us/company/policies-and-statements/brightlayer-experience-hub-terms-and-conditions.html
+
+plans:
+  - id: brightlayer-power
+    name: Brightlayer Power
+    surface: Brightlayer On-Premise 8.0
+    description: |
+      Intelligent power-management module of the Brightlayer 8.0 on-premise platform. Replaces the legacy 7.x tiered model; under 8.0 the six new product offerings are sold under a "simplified and tier-free commercial model" (verbatim).
+    pricing:
+      model: subscription
+      tiers: tier-free
+      publicPrice: false
+      contact: https://www.eaton.com/us/en-us/company/contact-us.html
+
+  - id: brightlayer-distributed-it
+    name: Brightlayer Distributed IT
+    surface: Brightlayer On-Premise 8.0
+    pricing:
+      model: subscription
+      tiers: tier-free
+      publicPrice: false
+
+  - id: brightlayer-dcim
+    name: Brightlayer DCIM
+    surface: Brightlayer On-Premise 8.0
+    pricing:
+      model: subscription
+      tiers: tier-free
+      publicPrice: false
+
+  - id: brightlayer-epms
+    name: Brightlayer EPMS
+    surface: Brightlayer On-Premise 8.0
+    pricing:
+      model: subscription
+      tiers: tier-free
+      publicPrice: false
+
+  - id: smart-breaker-api
+    name: Smart Breaker API
+    surface: api.em.eaton.com
+    pricing:
+      model: subscription
+      gating: AbleEdge Developer Portal account + tenant linkage to owned breakers/chargers
+      publicPrice: false
+      marketplace: https://www.eaton.com/us/en-us/digital/marketplace/smart-breaker-api.html
+
+  - id: ev-charger-api
+    name: Electric Vehicle Smart Breaker Charger API
+    surface: api.em.eaton.com (ev-emcb subset)
+    pricing:
+      model: subscription
+      publicPrice: false
+      marketplace: https://www.eaton.com/br/en-us/digital/marketplace/electric-vehicle-smart-breaker-charger-api-.html
+
+  - id: ambient-monitoring-api
+    name: Smart Ambient Monitoring API
+    surface: Brightlayer Experience Hub
+    pricing:
+      model: subscription
+      gating: Customer must own/operate Eaton smart circuit breakers; available in the Brightlayer Experience Hub digital catalog.
+      publicPrice: false
+
+  - id: ci-data-open-api
+    name: CI-Data Open API (by WES)
+    surface: Brightlayer Experience Hub (partner solution)
+    pricing:
+      model: partner-set
+      publicPrice: false
+      note: |
+        "Each Partner Solution will have its own associated terms and conditions that are offered by Solution Partner and apply to the purchase and use of the Partner Solution" — Eaton does not set pricing for partner-listed solutions.
+
+  - id: brightlayer-ui
+    name: Brightlayer UI (Design System)
+    surface: github.com/brightlayer-ui + npm @brightlayer-ui/*
+    pricing:
+      model: open-source
+      license: see individual packages
+      publicPrice: free

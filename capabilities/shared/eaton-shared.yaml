@@ -1,0 +1,26 @@
+name: Eaton Shared Capabilities
+description: |
+  Cross-API shared primitives reused across Eaton Smart Breaker, EV Charging, Demand Response, and Brightlayer Operations Insight surfaces.
+version: 0.1.0
+provider: eaton
+
+shared:
+  - id: oauth-token-exchange
+    name: OAuth2 Client-Credentials Token Exchange
+    summary: Exchange a Base64-encoded Client ID + secret for a 1-hour Bearer access token.
+
+  - id: subscription-key-injection
+    name: Subscription Key Header Injection
+    summary: Inject `Em-Api-Subscription-Key` into every API request as required by all Eaton EM APIs.
+
+  - id: tenant-org-resolution
+    name: Tenant / Organization Resolution
+    summary: Resolve the calling principal to a tenant organization that owns devices, locations, and users.
+
+  - id: location-hierarchy
+    name: Location Hierarchy Traversal
+    summary: Traverse organization → location → panel → device hierarchy used across Brightlayer and EM APIs.
+
+  - id: device-telemetry-windowing
+    name: Device Telemetry Windowing
+    summary: Standard time-windowed telemetry pull (start, end, interval) used by smart-breaker, EV-charger, PDU, and EPMS surfaces.

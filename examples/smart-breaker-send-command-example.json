@@ -1,0 +1,23 @@
+{
+  "request": {
+    "method": "POST",
+    "url": "https://api.em.eaton.com/api/v1/devices/9d23b441-3c5e-49b0-822a-c1f7e0aa53cd/commands",
+    "headers": {
+      "Em-Api-Subscription-Key": "{SMART_BREAKER_API_KEY}",
+      "Authorization": "Bearer {AUTH_TOKEN}",
+      "Content-Type": "application/json"
+    },
+    "body": {
+      "command": "open",
+      "reason": "Demand response curtailment 18:00-19:00"
+    }
+  },
+  "response": {
+    "status": 202,
+    "body": {
+      "commandId": "5fa3a91f-9c4d-4a9d-9821-d18ec7c3a4a1",
+      "status": "accepted",
+      "createdAt": "2026-05-23T18:00:00Z"
+    }
+  }
+}

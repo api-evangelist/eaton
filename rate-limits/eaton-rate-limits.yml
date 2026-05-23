@@ -1,0 +1,44 @@
+name: Eaton — Rate Limits
+description: |
+  Documented and inferred rate-limit and concurrency policies across Eaton's developer-portal APIs. Eaton does not publish a unified rate-limit table; this file captures what is documented in the AbleEdge developer portal, the Smart Breaker API docs, and the Brightlayer 8.0 on-premise platform docs, plus call-pattern conventions (token TTL, batch sizes).
+specification: API Commons Rate Limits 0.1
+provider: eaton
+modified: '2026-05-23'
+sources:
+  - https://api.em.eaton.com/docs
+  - https://portal.em.eaton.com/tutorial
+  - https://www.eaton.com/content/dam/eaton/products/brightlayer/brightlayer-power/eaton-brightlayer-restful-api-user-guide-v8.pdf
+
+policies:
+  - api: Eaton Smart Breaker API
+    surface: https://api.em.eaton.com
+    documented:
+      - rule: OAuth2 access token validity
+        value: 3600 seconds (1 hour)
+        source: api.em.eaton.com/docs
+      - rule: All requests must include `Em-Api-Subscription-Key`
+        value: per-subscription enforcement
+      - rule: Batch device-command size
+        value: bounded per request (use /api/v1/deviceBatchCommands for fan-out; per-app cap negotiated with Eaton)
+    inferred:
+      - rule: Per-subscription QPS cap
+        value: not publicly published; consult portal.em.eaton.com or your Eaton solution architect
+    enforcement:
+      - 401 Unauthorized on expired or missing token
+      - 403 Forbidden on missing or invalid `Em-Api-Subscription-Key`
+
+  - api: Brightlayer Demand Response Service API
+    documented:
+      - rule: DR event dispatch
+        value: governed by utility program enrollment + DRMS scheduler, not a public QPS budget
+    inferred:
+      - rule: Tenant-isolated dispatch
+        value: dispatch operations are scoped to enrolled assets per utility tenant
+
+  - api: Brightlayer RESTful API (On-Premise)
+    documented:
+      - rule: Self-hosted
+        value: rate limiting is determined by the customer's own deployment (Brightlayer Power 8.0 runs on-premise; capacity scales with the OVF appliance sizing)
+    inferred:
+      - rule: No cloud-vendor-imposed limits
+        value: limits depend on hardware sizing and concurrent UI/API users

@@ -1,0 +1,24 @@
+{
+  "request": {
+    "method": "GET",
+    "url": "https://api.em.eaton.com/api/v1/ev/9d23b441-3c5e-49b0-822a-c1f7e0aa53cd/sessions",
+    "headers": {
+      "Em-Api-Subscription-Key": "{SMART_BREAKER_API_KEY}",
+      "Authorization": "Bearer {AUTH_TOKEN}"
+    }
+  },
+  "response": {
+    "status": 200,
+    "body": [
+      {
+        "id": "c3a7e2a8-b81d-4a4d-8f29-3a7d8e0c12a4",
+        "deviceId": "9d23b441-3c5e-49b0-822a-c1f7e0aa53cd",
+        "startedAt": "2026-05-22T22:14:00Z",
+        "endedAt": "2026-05-23T05:48:00Z",
+        "energyDelivered": 42360.0,
+        "peakPower": 7400.0,
+        "status": "completed"
+      }
+    ]
+  }
+}
