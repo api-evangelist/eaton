@@ -346,6 +346,8 @@ common:
   - type: JSONLD
     url: json-ld/eaton-context.jsonld
 
+  - type: LLMsTxt
+    url: https://developer.eaton.com/llms.txt
 maintainers:
   - FN: Kin Lane
     email: info@apievangelist.com
