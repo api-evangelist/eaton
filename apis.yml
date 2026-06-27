@@ -299,7 +299,7 @@ common:
     url: https://www.eaton.com/us/en-us/digital/brightlayer-experience-hub.html
   - type: Hub
     url: https://www.eaton.com/us/en-us/digital/brightlayer-experience-hub.html
-  - type: SignUp
+  - type: Signup
     url: https://www.eaton.com/us/en-us/digital/for-developer-partners/developer_portal_get_started.html
   - type: FAQ
     url: https://www.eaton.com/us/en-us/digital/for-developer-partners/developer_portal_FAQ.html
@@ -346,7 +346,7 @@ common:
   - type: JSONLD
     url: json-ld/eaton-context.jsonld
 
-  - type: LLMsTxt
+  - type: LlmsText
     url: https://developer.eaton.com/llms.txt
 maintainers:
   - FN: Kin Lane
