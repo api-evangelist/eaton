@@ -1,0 +1,26 @@
+generated: '2026-07-11'
+method: derived
+source: openapi/smart-breaker-openapi.yml
+summary:
+  types:
+  - apiKey
+  - oauth2
+  api_key_in:
+  - header
+  oauth2_flows:
+  - clientCredentials
+schemes:
+- name: OAuth2
+  type: oauth2
+  flows:
+  - flow: clientCredentials
+    tokenUrl: https://api.em.eaton.com/oauth2/token
+    scopes: 0
+  sources:
+  - openapi/smart-breaker-openapi.yml
+- name: SubscriptionKey
+  type: apiKey
+  in: header
+  parameter: Em-Api-Subscription-Key
+  sources:
+  - openapi/smart-breaker-openapi.yml
