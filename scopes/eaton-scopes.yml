@@ -1,0 +1,12 @@
+generated: '2026-07-11'
+method: derived
+source: openapi/smart-breaker-openapi.yml
+docs: https://api.em.eaton.com/docs
+note: Eaton's Smart Breaker API OAuth2 uses a scope-less client-credentials flow — tokens are issued from client ID + secret alongside an Em-Api-Subscription-Key header, with authorization governed by application/organization service accounts and user roles rather than documented OAuth scopes (https://api.em.eaton.com/docs).
+schemes:
+- name: OAuth2
+  source: openapi/smart-breaker-openapi.yml
+  flows:
+  - flow: clientCredentials
+    tokenUrl: https://api.em.eaton.com/oauth2/token
+scopes: []
