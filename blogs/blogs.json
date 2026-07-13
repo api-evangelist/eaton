@@ -2,11 +2,10 @@
   "repo": "eaton",
   "feeds": [
     {
-      "source": "https://www.eaton.com/us/en-us/company/news-insights.html",
-      "saved": 0,
-      "error": "timeout on all fetch attempts"
+      "source": "https://www.eaton.com/us/en-us/company/policies-and-statements.html",
+      "error": "TimeoutError"
     }
   ],
   "post_count": 0,
-  "fetched": "2026-06-27T12:38:07Z"
+  "fetched": "2026-07-11T11:50:51Z"
 }
