@@ -1,0 +1,107 @@
+openapi: 3.0.3
+info:
+  title: Eaton Smart Breaker Authorization API
+  description: 'REST API (formerly the Energy Management / EM API) for Eaton AbleEdge Smart Breakers and Eaton Green Motion EV Smart Breaker Chargers. Lets developers commission, monitor, and control devices, model panels and locations, run batch commands, and pull real-time and historical energy telemetry. Devices are typed via `hardwareType` — `emcb` for standard smart breakers, `ev-emcb` for EV chargers.
+
+
+    Authentication: every request must include `Em-Api-Subscription-Key: {SMART_BREAKER_API_KEY}` and `Authorization: Bearer {AUTH_TOKEN}`. Tokens are obtained from the OAuth2 token endpoint via Client ID + secret (Base64-encoded Basic auth) and are valid for 1 hour.
+
+
+    This OpenAPI spec is reconstructed from the public Eaton developer-portal documentation (https://api.em.eaton.com/docs and https://api.em.eaton.com/preview/docs) and the AbleEdge Smart Breaker developer portal (https://portal.em.eaton.com/). It is intended for cataloging and capability mapping in API Evangelist tooling, not as a substitute for the authoritative provider spec.
+
+    '
+  version: 1.0.0
+  contact:
+    name: Eaton AbleEdge Developer Portal
+    url: https://portal.em.eaton.com/
+  license:
+    name: Eaton Brightlayer Experience Hub Terms
+    url: https://www.eaton.com/us/en-us/company/policies-and-statements/brightlayer-experience-hub-terms-and-conditions.html
+  x-source: https://api.em.eaton.com/docs
+  x-spec-status: reconstructed-from-public-docs
+servers:
+- url: https://api.em.eaton.com
+  description: Production
+- url: https://api.em.eaton.com/preview
+  description: Preview (forward-looking, opt-in)
+security:
+- OAuth2: []
+  SubscriptionKey: []
+tags:
+- name: Authorization
+  description: OAuth2 token issuance and user/service-account authentication.
+paths:
+  /oauth2/token:
+    post:
+      tags:
+      - Authorization
+      summary: Issue OAuth2 Bearer Token
+      description: Exchange Client ID + secret (Base64-encoded as Basic auth) for a Bearer access token valid for 1 hour.
+      requestBody:
+        required: true
+        content:
+          application/x-www-form-urlencoded:
+            schema:
+              type: object
+              required:
+              - grant_type
+              properties:
+                grant_type:
+                  type: string
+                  enum:
+                  - client_credentials
+      responses:
+        '200':
+          description: Token issued
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/AccessToken'
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+components:
+  responses:
+    Unauthorized:
+      description: Missing or invalid credentials
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/Error'
+  schemas:
+    Error:
+      type: object
+      properties:
+        code:
+          type: string
+        message:
+          type: string
+        details:
+          type: object
+          additionalProperties: true
+    AccessToken:
+      type: object
+      required:
+      - access_token
+      - token_type
+      - expires_in
+      properties:
+        access_token:
+          type: string
+        token_type:
+          type: string
+          enum:
+          - Bearer
+        expires_in:
+          type: integer
+          description: Token lifetime in seconds (typically 3600)
+  securitySchemes:
+    OAuth2:
+      type: oauth2
+      flows:
+        clientCredentials:
+          tokenUrl: https://api.em.eaton.com/oauth2/token
+          scopes: {}
+    SubscriptionKey:
+      type: apiKey
+      in: header
+      name: Em-Api-Subscription-Key
