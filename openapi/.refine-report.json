@@ -1,0 +1,28 @@
+{
+  "provider": "eaton",
+  "sources": [
+    "eaton-authorization-api-openapi.yml",
+    "eaton-device-commands-api-openapi.yml",
+    "eaton-devices-api-openapi.yml",
+    "eaton-energy-data-api-openapi.yml",
+    "eaton-ev-only-api-openapi.yml",
+    "eaton-events-api-openapi.yml",
+    "eaton-locations-api-openapi.yml",
+    "eaton-organizations-api-openapi.yml"
+  ],
+  "outputs": [
+    "eaton-authorization-api-openapi.yml",
+    "eaton-device-commands-api-openapi.yml",
+    "eaton-devices-api-openapi.yml",
+    "eaton-energy-data-api-openapi.yml",
+    "eaton-ev-only-api-openapi.yml",
+    "eaton-events-api-openapi.yml",
+    "eaton-locations-api-openapi.yml",
+    "eaton-organizations-api-openapi.yml"
+  ],
+  "archived": [],
+  "errors": [],
+  "warnings": [],
+  "notes": [],
+  "skipped": []
+}
