@@ -65,8 +65,6 @@ apis:
       https://www.eaton.com/us/en-us/catalog/electrical-circuit-protection/ev-charging-smart-breakers.html
   - type: Authentication
     url: https://api.em.eaton.com/docs
-  - type: Capability
-    url: capabilities/ev-charging.yaml
 - name: Eaton Smart Ambient Monitoring API
   description: >
     Healthcare-targeted subscription API that derives an "Activities of Daily Living" signal for residents
@@ -91,8 +89,6 @@ apis:
   - type: UseCases
     url: >-
       https://www.eaton.com/us/en-us/markets/healthcare/long-term-care-facilities/Smart-ambient-monitoring.html
-  - type: Capability
-    url: capabilities/ambient-monitoring.yaml
 - name: Brightlayer Demand Response Service API
   description: >
     RESTful, HTTP-based API for utilities running Eaton Demand Response Management System (DRMS) programs.
@@ -121,8 +117,6 @@ apis:
   - type: Analytics
     url: >-
       https://www.eaton.com/us/en-us/digital/brightlayer/brightlayer-utilities-suite/dr-analytics.html
-  - type: Capability
-    url: capabilities/demand-response.yaml
 - name: Brightlayer Operations Insight APIs
   description: >
     Family of REST APIs that let partners and customers extend the monitoring capabilities of Eaton power
@@ -328,8 +322,6 @@ apis:
   - type: KnowledgeCenter
     url: >-
       https://www.eaton.com/us/en-us/products/electrical-circuit-protection/circuit-breakers/ableedge-smart-breaker-help-center.html
-  - type: Capability
-    url: capabilities/smart-breaker.yaml
 - aid: eaton:eaton-device-commands-api
   name: Eaton Device Commands API
   description: Per-device and batch device-control commands.
@@ -361,8 +353,6 @@ apis:
   - type: KnowledgeCenter
     url: >-
       https://www.eaton.com/us/en-us/products/electrical-circuit-protection/circuit-breakers/ableedge-smart-breaker-help-center.html
-  - type: Capability
-    url: capabilities/smart-breaker.yaml
 - aid: eaton:eaton-devices-api
   name: Eaton Devices API
   description: Smart breakers and EV chargers (emcb, ev-emcb).
@@ -394,8 +384,6 @@ apis:
   - type: KnowledgeCenter
     url: >-
       https://www.eaton.com/us/en-us/products/electrical-circuit-protection/circuit-breakers/ableedge-smart-breaker-help-center.html
-  - type: Capability
-    url: capabilities/smart-breaker.yaml
 - aid: eaton:eaton-energy-data-api
   name: Eaton Energy Data API
   description: Real-time and historical energy telemetry.
@@ -427,8 +415,6 @@ apis:
   - type: KnowledgeCenter
     url: >-
       https://www.eaton.com/us/en-us/products/electrical-circuit-protection/circuit-breakers/ableedge-smart-breaker-help-center.html
-  - type: Capability
-    url: capabilities/smart-breaker.yaml
 - aid: eaton:eaton-ev-only-api
   name: Eaton EV Only API
   description: Operations supported only by Eaton EV Smart Breaker Chargers.
@@ -460,8 +446,6 @@ apis:
   - type: KnowledgeCenter
     url: >-
       https://www.eaton.com/us/en-us/products/electrical-circuit-protection/circuit-breakers/ableedge-smart-breaker-help-center.html
-  - type: Capability
-    url: capabilities/smart-breaker.yaml
 - aid: eaton:eaton-events-api
   name: Eaton Events API
   description: Device events, alarms, and notifications.
@@ -493,8 +477,6 @@ apis:
   - type: KnowledgeCenter
     url: >-
       https://www.eaton.com/us/en-us/products/electrical-circuit-protection/circuit-breakers/ableedge-smart-breaker-help-center.html
-  - type: Capability
-    url: capabilities/smart-breaker.yaml
 - aid: eaton:eaton-locations-api
   name: Eaton Locations API
   description: Sites, buildings, and panels grouping devices.
@@ -526,8 +508,6 @@ apis:
   - type: KnowledgeCenter
     url: >-
       https://www.eaton.com/us/en-us/products/electrical-circuit-protection/circuit-breakers/ableedge-smart-breaker-help-center.html
-  - type: Capability
-    url: capabilities/smart-breaker.yaml
 - aid: eaton:eaton-organizations-api
   name: Eaton Organizations API
   description: Tenant organizations that own devices and users.
@@ -559,8 +539,6 @@ apis:
   - type: KnowledgeCenter
     url: >-
       https://www.eaton.com/us/en-us/products/electrical-circuit-protection/circuit-breakers/ableedge-smart-breaker-help-center.html
-  - type: Capability
-    url: capabilities/smart-breaker.yaml
 common:
   - type: AgenticAccess
     url: agentic-access/eaton-agentic-access.yml
