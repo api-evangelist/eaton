@@ -1,0 +1,259 @@
+{
+  "item": [
+    {
+      "id": "1c5fe27e-1d9c-4d92-9717-8ced7da241a4",
+      "name": "EV Only",
+      "description": {
+        "content": "Operations supported only by Eaton EV Smart Breaker Chargers.",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "b9f2dfed-c11c-4d8e-8e83-0e9629fe1c33",
+          "name": "List EV Charging Sessions",
+          "request": {
+            "name": "List EV Charging Sessions",
+            "description": {},
+            "url": {
+              "path": [
+                "api",
+                "v1",
+                "ev",
+                ":deviceId",
+                "sessions"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<uuid>",
+                  "key": "deviceId",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "cfae303a-603e-458e-a2ff-9c5b420f1f5e",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v1",
+                    "ev",
+                    ":deviceId",
+                    "sessions"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<uuid>",
+                      "key": "deviceId",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "[\n  {\n    \"id\": \"b72186f6-1031-cd5b-cfca-78b41a929c85\",\n    \"deviceId\": \"bd3d0772-7bbd-5501-4755-574c3fd18d48\",\n    \"startedAt\": \"1974-12-25T03:34:35.882Z\",\n    \"endedAt\": \"1951-07-29T05:56:07.097Z\",\n    \"energyDelivered\": 2453.1416163946164,\n    \"peakPower\": 9670.227855933585,\n    \"status\": \"completed\"\n  },\n  {\n    \"id\": \"c19e504b-1889-bca3-4d8f-03afbc14ee0b\",\n    \"deviceId\": \"833996b2-a149-0695-d9f2-c15cfcfb206b\",\n    \"startedAt\": \"1962-12-04T12:26:45.521Z\",\n    \"endedAt\": \"1994-05-31T00:27:34.782Z\",\n    \"energyDelivered\": 1714.1713554263426,\n    \"peakPower\": 2800.834117034063,\n    \"status\": \"cancelled\"\n  }\n]",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "8a101ce2-24a6-4120-9abd-56dc63913664",
+          "name": "Get EV Charging Session",
+          "request": {
+            "name": "Get EV Charging Session",
+            "description": {},
+            "url": {
+              "path": [
+                "api",
+                "v1",
+                "ev",
+                ":deviceId",
+                "sessions",
+                ":sessionId"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<uuid>",
+                  "key": "deviceId",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<uuid>",
+                  "key": "sessionId",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "47bd296a-26f0-49b7-b0cd-6b8a5e91212e",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v1",
+                    "ev",
+                    ":deviceId",
+                    "sessions",
+                    ":sessionId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<uuid>",
+                      "key": "deviceId",
+                      "description": "(Required) "
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<uuid>",
+                      "key": "sessionId",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"id\": \"2e0f99c1-2843-650a-8ee6-9a53dad83dab\",\n  \"deviceId\": \"ff15a83a-4d15-3ca0-e289-b514f51cf59b\",\n  \"startedAt\": \"2006-03-29T22:31:33.716Z\",\n  \"endedAt\": \"2026-06-03T14:15:14.200Z\",\n  \"energyDelivered\": 1291.1440878312808,\n  \"peakPower\": 365.2119625812955,\n  \"status\": \"faulted\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://api.em.eaton.com",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "oauth2",
+    "oauth2": [
+      {
+        "key": "accessTokenUrl",
+        "value": "https://api.em.eaton.com/oauth2/token"
+      },
+      {
+        "key": "grant_type",
+        "value": "client_credentials"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "7db64e24-4869-4ba5-a89f-8e310c88368d",
+    "name": "Eaton Smart Breaker Authorization EV Only API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "REST API (formerly the Energy Management / EM API) for Eaton AbleEdge Smart Breakers and Eaton Green Motion EV Smart Breaker Chargers. Lets developers commission, monitor, and control devices, model panels and locations, run batch commands, and pull real-time and historical energy telemetry. Devices are typed via `hardwareType` — `emcb` for standard smart breakers, `ev-emcb` for EV chargers.\n\nAuthentication: every request must include `Em-Api-Subscription-Key: {SMART_BREAKER_API_KEY}` and `Authorization: Bearer {AUTH_TOKEN}`. Tokens are obtained from the OAuth2 token endpoint via Client ID + secret (Base64-encoded Basic auth) and are valid for 1 hour.\n\nThis OpenAPI spec is reconstructed from the public Eaton developer-portal documentation (https://api.em.eaton.com/docs and https://api.em.eaton.com/preview/docs) and the AbleEdge Smart Breaker developer portal (https://portal.em.eaton.com/). It is intended for cataloging and capability mapping in API Evangelist tooling, not as a substitute for the authoritative provider spec.\n\n\nContact Support:\n Name: Eaton AbleEdge Developer Portal",
+      "type": "text/plain"
+    }
+  }
+}

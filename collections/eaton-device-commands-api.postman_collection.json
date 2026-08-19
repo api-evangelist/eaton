@@ -1,0 +1,271 @@
+{
+  "item": [
+    {
+      "id": "9824a9a2-18fd-4f2a-a774-6834d51c5cfc",
+      "name": "Device Commands",
+      "description": {
+        "content": "Per-device and batch device-control commands.",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "1765aafd-6001-4a17-8a8c-e918ea537a07",
+          "name": "Send Device Command",
+          "request": {
+            "name": "Send Device Command",
+            "description": {
+              "content": "Send an on/off/cycle command to a single device.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "api",
+                "v1",
+                "devices",
+                ":deviceId",
+                "commands"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<uuid>",
+                  "key": "deviceId",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"command\": \"<string>\",\n  \"reason\": \"<string>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "b0979f35-29b4-436d-a551-bcacd99fd249",
+              "name": "Command accepted",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v1",
+                    "devices",
+                    ":deviceId",
+                    "commands"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<uuid>",
+                      "key": "deviceId",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"command\": \"<string>\",\n  \"reason\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Accepted",
+              "code": 202,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"commandId\": \"2ffc91da-082f-aedb-d56f-8b1a4036b314\",\n  \"status\": \"failed\",\n  \"createdAt\": \"1963-07-25T09:22:19.370Z\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "19605066-6380-4b34-b6ab-caeac9cff4c0",
+          "name": "Send Batch Device Commands",
+          "request": {
+            "name": "Send Batch Device Commands",
+            "description": {
+              "content": "Send a single command to many devices in one request.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "api",
+                "v1",
+                "deviceBatchCommands"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"deviceIds\": [\n    \"<uuid>\",\n    \"<uuid>\"\n  ],\n  \"command\": {\n    \"command\": \"<string>\",\n    \"reason\": \"<string>\"\n  }\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "ac2592be-922a-46d7-931a-78e1c7e19d3c",
+              "name": "Batch accepted",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v1",
+                    "deviceBatchCommands"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"deviceIds\": [\n    \"<uuid>\",\n    \"<uuid>\"\n  ],\n  \"command\": {\n    \"command\": \"<string>\",\n    \"reason\": \"<string>\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Accepted",
+              "code": 202,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"batchId\": \"d29ecbc5-8a81-d748-80e2-f1e759794ac2\",\n  \"receipts\": [\n    {\n      \"commandId\": \"605a67e1-7b95-4f4c-2d6d-16a00c639dae\",\n      \"status\": \"completed\",\n      \"createdAt\": \"2018-12-16T02:52:25.967Z\"\n    },\n    {\n      \"commandId\": \"c7f1b9c0-297c-bcba-11ab-258023f8b3ce\",\n      \"status\": \"queued\",\n      \"createdAt\": \"2019-08-03T23:57:56.597Z\"\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://api.em.eaton.com",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "oauth2",
+    "oauth2": [
+      {
+        "key": "accessTokenUrl",
+        "value": "https://api.em.eaton.com/oauth2/token"
+      },
+      {
+        "key": "grant_type",
+        "value": "client_credentials"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "0d933669-e176-46ad-884f-183decdebe38",
+    "name": "Eaton Smart Breaker Authorization Device Commands API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "REST API (formerly the Energy Management / EM API) for Eaton AbleEdge Smart Breakers and Eaton Green Motion EV Smart Breaker Chargers. Lets developers commission, monitor, and control devices, model panels and locations, run batch commands, and pull real-time and historical energy telemetry. Devices are typed via `hardwareType` — `emcb` for standard smart breakers, `ev-emcb` for EV chargers.\n\nAuthentication: every request must include `Em-Api-Subscription-Key: {SMART_BREAKER_API_KEY}` and `Authorization: Bearer {AUTH_TOKEN}`. Tokens are obtained from the OAuth2 token endpoint via Client ID + secret (Base64-encoded Basic auth) and are valid for 1 hour.\n\nThis OpenAPI spec is reconstructed from the public Eaton developer-portal documentation (https://api.em.eaton.com/docs and https://api.em.eaton.com/preview/docs) and the AbleEdge Smart Breaker developer portal (https://portal.em.eaton.com/). It is intended for cataloging and capability mapping in API Evangelist tooling, not as a substitute for the authoritative provider spec.\n\n\nContact Support:\n Name: Eaton AbleEdge Developer Portal",
+      "type": "text/plain"
+    }
+  }
+}

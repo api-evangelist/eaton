@@ -1,0 +1,430 @@
+{
+  "item": [
+    {
+      "id": "8a02c444-9285-4895-9b06-dc86209a24fb",
+      "name": "Devices",
+      "description": {
+        "content": "Smart breakers and EV chargers (emcb, ev-emcb).",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "8f04ab52-001b-487a-ab44-5f2ca1ee8a2a",
+          "name": "List Devices",
+          "request": {
+            "name": "List Devices",
+            "description": {
+              "content": "List devices, optionally filtered by location.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "api",
+                "v1",
+                "devices"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "locationId",
+                  "value": "<uuid>"
+                },
+                {
+                  "disabled": false,
+                  "key": "hardwareType",
+                  "value": "<string>"
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "a850a318-74b1-4a0c-ac3e-e6cc2d40b4f9",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v1",
+                    "devices"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "locationId",
+                      "value": "<uuid>"
+                    },
+                    {
+                      "key": "hardwareType",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "[\n  {\n    \"id\": \"94e3d997-fb82-4a4e-61aa-57536b2ad1f0\",\n    \"locationId\": \"e7a73243-9d68-b328-b022-0b476ee848e1\",\n    \"hardwareType\": \"ev-emcb\",\n    \"sku\": \"string\",\n    \"serialNumber\": \"string\",\n    \"chargerStationId\": \"string\",\n    \"name\": \"string\",\n    \"firmwareVersion\": \"string\"\n  },\n  {\n    \"id\": \"3d67a27a-f886-2229-4ac9-a7a5b00c6f81\",\n    \"locationId\": \"56c3eb35-a101-7d88-0b2e-27e6443d89a7\",\n    \"hardwareType\": \"emcb\",\n    \"sku\": \"string\",\n    \"serialNumber\": \"string\",\n    \"chargerStationId\": \"string\",\n    \"name\": \"string\",\n    \"firmwareVersion\": \"string\"\n  }\n]",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "aab9a904-863c-4eb9-af60-5f85ac3cd799",
+          "name": "Get Device",
+          "request": {
+            "name": "Get Device",
+            "description": {},
+            "url": {
+              "path": [
+                "api",
+                "v1",
+                "devices",
+                ":deviceId"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<uuid>",
+                  "key": "deviceId",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "2d31ac01-eb99-4d3d-bea0-e012590dc822",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v1",
+                    "devices",
+                    ":deviceId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<uuid>",
+                      "key": "deviceId",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"id\": \"edafa651-3244-4f2c-d2cd-c73d5b3bdd8f\",\n  \"locationId\": \"43476ff0-22e5-a418-033c-de5b21bb0276\",\n  \"hardwareType\": \"ev-emcb\",\n  \"sku\": \"string\",\n  \"serialNumber\": \"string\",\n  \"chargerStationId\": \"string\",\n  \"name\": \"string\",\n  \"firmwareVersion\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "fcea7f7c-2703-4aa7-b125-616dfce457a4",
+          "name": "Decommission Device",
+          "request": {
+            "name": "Decommission Device",
+            "description": {},
+            "url": {
+              "path": [
+                "api",
+                "v1",
+                "devices",
+                ":deviceId"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<uuid>",
+                  "key": "deviceId",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "method": "DELETE",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "6e78363a-a5bd-451e-8bc9-de780f08bfd8",
+              "name": "Device decommissioned",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v1",
+                    "devices",
+                    ":deviceId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<uuid>",
+                      "key": "deviceId",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  }
+                ],
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "No Content",
+              "code": 204,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "15a9e61b-8a64-4fcb-b6eb-179171c54e8b",
+          "name": "Get Device State",
+          "request": {
+            "name": "Get Device State",
+            "description": {},
+            "url": {
+              "path": [
+                "api",
+                "v1",
+                "devices",
+                ":deviceId",
+                "state"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<uuid>",
+                  "key": "deviceId",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "c87e746d-e2fe-48a3-8443-b469ad5e611e",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v1",
+                    "devices",
+                    ":deviceId",
+                    "state"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<uuid>",
+                      "key": "deviceId",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"deviceId\": \"9e0bac5f-4ce0-396c-362b-ea838bc48a25\",\n  \"position\": \"tripped\",\n  \"connectivity\": \"online\",\n  \"lastReportedAt\": \"1971-12-05T01:42:53.068Z\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://api.em.eaton.com",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "oauth2",
+    "oauth2": [
+      {
+        "key": "accessTokenUrl",
+        "value": "https://api.em.eaton.com/oauth2/token"
+      },
+      {
+        "key": "grant_type",
+        "value": "client_credentials"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "1ca13fa2-f35e-4091-8b40-1e4806604bce",
+    "name": "Eaton Smart Breaker Authorization Devices API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "REST API (formerly the Energy Management / EM API) for Eaton AbleEdge Smart Breakers and Eaton Green Motion EV Smart Breaker Chargers. Lets developers commission, monitor, and control devices, model panels and locations, run batch commands, and pull real-time and historical energy telemetry. Devices are typed via `hardwareType` — `emcb` for standard smart breakers, `ev-emcb` for EV chargers.\n\nAuthentication: every request must include `Em-Api-Subscription-Key: {SMART_BREAKER_API_KEY}` and `Authorization: Bearer {AUTH_TOKEN}`. Tokens are obtained from the OAuth2 token endpoint via Client ID + secret (Base64-encoded Basic auth) and are valid for 1 hour.\n\nThis OpenAPI spec is reconstructed from the public Eaton developer-portal documentation (https://api.em.eaton.com/docs and https://api.em.eaton.com/preview/docs) and the AbleEdge Smart Breaker developer portal (https://portal.em.eaton.com/). It is intended for cataloging and capability mapping in API Evangelist tooling, not as a substitute for the authoritative provider spec.\n\n\nContact Support:\n Name: Eaton AbleEdge Developer Portal",
+      "type": "text/plain"
+    }
+  }
+}

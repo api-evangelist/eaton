@@ -1,0 +1,106 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Eaton Smart Breaker Authorization Devices API",
+    "version": "1.0.0"
+  },
+  "request": {
+    "auth": {
+      "type": "oauth2",
+      "flow": "client_credentials",
+      "accessTokenUrl": "https://api.em.eaton.com/oauth2/token",
+      "credentials": {
+        "clientId": "{{clientId}}",
+        "clientSecret": "{{clientSecret}}"
+      }
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Devices",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List Devices",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.em.eaton.com/api/v1/devices",
+            "params": [
+              {
+                "name": "locationId",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "hardwareType",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "List devices, optionally filtered by location."
+        },
+        {
+          "info": {
+            "name": "Get Device",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.em.eaton.com/api/v1/devices/:deviceId",
+            "params": [
+              {
+                "name": "deviceId",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Get Device"
+        },
+        {
+          "info": {
+            "name": "Decommission Device",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "https://api.em.eaton.com/api/v1/devices/:deviceId",
+            "params": [
+              {
+                "name": "deviceId",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Decommission Device"
+        },
+        {
+          "info": {
+            "name": "Get Device State",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.em.eaton.com/api/v1/devices/:deviceId/state",
+            "params": [
+              {
+                "name": "deviceId",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Get Device State"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

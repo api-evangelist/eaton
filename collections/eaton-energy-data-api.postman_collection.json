@@ -1,0 +1,173 @@
+{
+  "item": [
+    {
+      "id": "2acc5330-e7d4-41b0-8f81-9b49ff277cbd",
+      "name": "Energy Data",
+      "description": {
+        "content": "Real-time and historical energy telemetry.",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "7aca0477-6c98-434c-a68b-c3069da2ff5c",
+          "name": "Get Device Energy Telemetry",
+          "request": {
+            "name": "Get Device Energy Telemetry",
+            "description": {},
+            "url": {
+              "path": [
+                "api",
+                "v1",
+                "devices",
+                ":deviceId",
+                "energy"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "start",
+                  "value": "<dateTime>"
+                },
+                {
+                  "disabled": false,
+                  "key": "end",
+                  "value": "<dateTime>"
+                },
+                {
+                  "disabled": false,
+                  "key": "interval",
+                  "value": "<string>"
+                }
+              ],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<uuid>",
+                  "key": "deviceId",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "930097f6-59fe-4ffe-960b-c0340cf85f66",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v1",
+                    "devices",
+                    ":deviceId",
+                    "energy"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "start",
+                      "value": "<dateTime>"
+                    },
+                    {
+                      "key": "end",
+                      "value": "<dateTime>"
+                    },
+                    {
+                      "key": "interval",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<uuid>",
+                      "key": "deviceId",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "[\n  {\n    \"timestamp\": \"1949-11-19T03:46:25.822Z\",\n    \"current\": 3502.725507029559,\n    \"voltage\": 2538.2484922172375,\n    \"frequency\": 1598.1407085639776,\n    \"activePower\": 7868.862798523291,\n    \"energy\": 6186.866815611734\n  },\n  {\n    \"timestamp\": \"1963-01-22T09:41:24.240Z\",\n    \"current\": 9928.42638485399,\n    \"voltage\": 4415.3448335732655,\n    \"frequency\": 1543.7476692742746,\n    \"activePower\": 9830.279751808324,\n    \"energy\": 2908.3979767060864\n  }\n]",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://api.em.eaton.com",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "oauth2",
+    "oauth2": [
+      {
+        "key": "accessTokenUrl",
+        "value": "https://api.em.eaton.com/oauth2/token"
+      },
+      {
+        "key": "grant_type",
+        "value": "client_credentials"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "f932e36b-e13c-4c88-9dee-4f57fc92a53b",
+    "name": "Eaton Smart Breaker Authorization Energy Data API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "REST API (formerly the Energy Management / EM API) for Eaton AbleEdge Smart Breakers and Eaton Green Motion EV Smart Breaker Chargers. Lets developers commission, monitor, and control devices, model panels and locations, run batch commands, and pull real-time and historical energy telemetry. Devices are typed via `hardwareType` — `emcb` for standard smart breakers, `ev-emcb` for EV chargers.\n\nAuthentication: every request must include `Em-Api-Subscription-Key: {SMART_BREAKER_API_KEY}` and `Authorization: Bearer {AUTH_TOKEN}`. Tokens are obtained from the OAuth2 token endpoint via Client ID + secret (Base64-encoded Basic auth) and are valid for 1 hour.\n\nThis OpenAPI spec is reconstructed from the public Eaton developer-portal documentation (https://api.em.eaton.com/docs and https://api.em.eaton.com/preview/docs) and the AbleEdge Smart Breaker developer portal (https://portal.em.eaton.com/). It is intended for cataloging and capability mapping in API Evangelist tooling, not as a substitute for the authoritative provider spec.\n\n\nContact Support:\n Name: Eaton AbleEdge Developer Portal",
+      "type": "text/plain"
+    }
+  }
+}

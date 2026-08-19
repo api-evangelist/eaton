@@ -1,0 +1,66 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Eaton Smart Breaker Authorization Device Commands API",
+    "version": "1.0.0"
+  },
+  "request": {
+    "auth": {
+      "type": "oauth2",
+      "flow": "client_credentials",
+      "accessTokenUrl": "https://api.em.eaton.com/oauth2/token",
+      "credentials": {
+        "clientId": "{{clientId}}",
+        "clientSecret": "{{clientSecret}}"
+      }
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Device Commands",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Send Device Command",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.em.eaton.com/api/v1/devices/:deviceId/commands",
+            "params": [
+              {
+                "name": "deviceId",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Send an on/off/cycle command to a single device."
+        },
+        {
+          "info": {
+            "name": "Send Batch Device Commands",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.em.eaton.com/api/v1/deviceBatchCommands",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Send a single command to many devices in one request."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

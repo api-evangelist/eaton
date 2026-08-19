@@ -1,0 +1,210 @@
+{
+  "item": [
+    {
+      "id": "efb33c95-8e5c-4d3f-bd8b-be44608e65ef",
+      "name": "Authorization",
+      "description": {
+        "content": "OAuth2 token issuance and user/service-account authentication.",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "efd6d685-5fab-43b7-a1c8-193526773fee",
+          "name": "Issue OAuth2 Bearer Token",
+          "request": {
+            "name": "Issue OAuth2 Bearer Token",
+            "description": {
+              "content": "Exchange Client ID + secret (Base64-encoded as Basic auth) for a Bearer access token valid for 1 hour.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "oauth2",
+                "token"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/x-www-form-urlencoded"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "urlencoded",
+              "urlencoded": [
+                {
+                  "disabled": false,
+                  "key": "grant_type",
+                  "value": "<string>",
+                  "description": "(Required) "
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "id": "7087f87d-ac68-4610-bec6-e85091c6e00f",
+              "name": "Token issued",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "oauth2",
+                    "token"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "urlencoded",
+                  "urlencoded": [
+                    {
+                      "disabled": false,
+                      "description": {
+                        "content": "(Required) ",
+                        "type": "text/plain"
+                      },
+                      "key": "grant_type",
+                      "value": "<string>"
+                    }
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"access_token\": \"string\",\n  \"token_type\": \"Bearer\",\n  \"expires_in\": 5901\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "7743953a-d58c-4edd-b8e3-5d094d685009",
+              "name": "Missing or invalid credentials",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "oauth2",
+                    "token"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "urlencoded",
+                  "urlencoded": [
+                    {
+                      "disabled": false,
+                      "description": {
+                        "content": "(Required) ",
+                        "type": "text/plain"
+                      },
+                      "key": "grant_type",
+                      "value": "<string>"
+                    }
+                  ]
+                }
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"code\": \"string\",\n  \"message\": \"string\",\n  \"details\": {\n    \"key_0\": \"string\",\n    \"key_1\": 1546.085475337834,\n    \"key_2\": 422.17207957833125\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://api.em.eaton.com",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "oauth2",
+    "oauth2": [
+      {
+        "key": "accessTokenUrl",
+        "value": "https://api.em.eaton.com/oauth2/token"
+      },
+      {
+        "key": "grant_type",
+        "value": "client_credentials"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "371dc24d-eaef-45e6-b1ab-0a9a483d60cd",
+    "name": "Eaton Smart Breaker Authorization API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "REST API (formerly the Energy Management / EM API) for Eaton AbleEdge Smart Breakers and Eaton Green Motion EV Smart Breaker Chargers. Lets developers commission, monitor, and control devices, model panels and locations, run batch commands, and pull real-time and historical energy telemetry. Devices are typed via `hardwareType` — `emcb` for standard smart breakers, `ev-emcb` for EV chargers.\n\nAuthentication: every request must include `Em-Api-Subscription-Key: {SMART_BREAKER_API_KEY}` and `Authorization: Bearer {AUTH_TOKEN}`. Tokens are obtained from the OAuth2 token endpoint via Client ID + secret (Base64-encoded Basic auth) and are valid for 1 hour.\n\nThis OpenAPI spec is reconstructed from the public Eaton developer-portal documentation (https://api.em.eaton.com/docs and https://api.em.eaton.com/preview/docs) and the AbleEdge Smart Breaker developer portal (https://portal.em.eaton.com/). It is intended for cataloging and capability mapping in API Evangelist tooling, not as a substitute for the authoritative provider spec.\n\n\nContact Support:\n Name: Eaton AbleEdge Developer Portal",
+      "type": "text/plain"
+    }
+  }
+}
