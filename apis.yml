@@ -38,7 +38,7 @@ tags:
   - Sustainability
 created: '2026-05-23'
 modified: '2026-05-23'
-specificationVersion: '0.18'
+specificationVersion: '0.23'
 
 apis:
 - name: Eaton EV Smart Breaker Charger API
