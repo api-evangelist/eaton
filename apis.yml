@@ -24,6 +24,24 @@ tags:
   - Smart Breaker
   - EV Charging
   - Demand Response
+  - Data-Center
+  - DCIM
+  - PDU
+  - UPS
+  - Utility
+  - Industrial
+  - Building
+  - Mobility
+  - AI Factory
+  - Energy
+  - IoT
+  - Sustainability
+tags_raw:
+  - Power Management
+  - Electrical
+  - Smart Breaker
+  - EV Charging
+  - Demand Response
   - Data Center
   - DCIM
   - PDU
@@ -74,6 +92,13 @@ apis:
   humanURL: https://www.eaton.com/us/en-us/digital/marketplace/smart-ambient-monitoring-api.html
   baseURL: https://api.em.eaton.com
   tags:
+  - Healthcare
+  - Ambient Monitoring
+  - Activities Of Daily Living
+  - Artificial Intelligence
+  - Machine-Learning
+  - Caregiving
+  tags_raw:
   - Healthcare
   - Ambient Monitoring
   - Activities Of Daily Living
@@ -223,6 +248,14 @@ apis:
   - React
   - Angular
   - React Native
+  - Open-Source
+  - Storybook
+  tags_raw:
+  - Design System
+  - UI Components
+  - React
+  - Angular
+  - React Native
   - Open Source
   - Storybook
   properties:
@@ -258,6 +291,13 @@ apis:
   tags:
   - Digital Twin
   - Energy Twin
+  - Artificial Intelligence
+  - Building Lifecycle
+  - Autodesk Tandem
+  - Predictive Maintenance
+  tags_raw:
+  - Digital Twin
+  - Energy Twin
   - AI
   - Building Lifecycle
   - Autodesk Tandem
@@ -278,6 +318,13 @@ apis:
   humanURL: >-
     https://www.eaton.com/us/en-us/company/news-insights/news-releases/2026/eaton-collaborates-with-nvidia-to-unveil-its-beam-rubin-dsx-platform.html
   tags:
+  - AI Factory
+  - NVIDIA
+  - 800 VDC
+  - Data-Center
+  - Reference Architecture
+  - Vera Rubin
+  tags_raw:
   - AI Factory
   - NVIDIA
   - 800 VDC
@@ -452,6 +499,8 @@ apis:
   humanURL: https://api.em.eaton.com/docs
   baseURL: https://api.em.eaton.com
   tags:
+  - Event
+  tags_raw:
   - Events
   properties:
   - type: OpenAPI
@@ -514,6 +563,8 @@ apis:
   humanURL: https://api.em.eaton.com/docs
   baseURL: https://api.em.eaton.com
   tags:
+  - Organization
+  tags_raw:
   - Organizations
   properties:
   - type: OpenAPI
