@@ -49,7 +49,7 @@ tags:
 - UPS
 - Utility
 - Industrial
-- Building
+- Buildings
 - Mobility
 - AI Factory
 - Energy
@@ -191,6 +191,13 @@ apis:
   - Brightlayer
   - DCIM
   - EPMS
+  - On-Premises
+  - REST
+  - Power Management
+  tags_raw:
+  - Brightlayer
+  - DCIM
+  - EPMS
   - On-Premise
   - REST
   - Power Management
@@ -254,7 +261,7 @@ apis:
   humanURL: https://brightlayer-ui.github.io/
   baseURL: https://www.npmjs.com/org/brightlayer-ui
   tags:
-  - Design System
+  - Design Systems
   - UI Components
   - React
   - Angular
@@ -535,6 +542,8 @@ apis:
   humanURL: https://api.em.eaton.com/docs
   baseURL: https://api.em.eaton.com
   tags:
+  - Location
+  tags_raw:
   - Locations
   properties:
   - type: OpenAPI
