@@ -1,15 +1,7 @@
-openapi: 3.0.3
+openapi: 3.2.0
 info:
-  title: Eaton Smart Breaker Authorization Devices API
-  description: 'REST API (formerly the Energy Management / EM API) for Eaton AbleEdge Smart Breakers and Eaton Green Motion EV Smart Breaker Chargers. Lets developers commission, monitor, and control devices, model panels and locations, run batch commands, and pull real-time and historical energy telemetry. Devices are typed via `hardwareType` — `emcb` for standard smart breakers, `ev-emcb` for EV chargers.
-
-
-    Authentication: every request must include `Em-Api-Subscription-Key: {SMART_BREAKER_API_KEY}` and `Authorization: Bearer {AUTH_TOKEN}`. Tokens are obtained from the OAuth2 token endpoint via Client ID + secret (Base64-encoded Basic auth) and are valid for 1 hour.
-
-
-    This OpenAPI spec is reconstructed from the public Eaton developer-portal documentation (https://api.em.eaton.com/docs and https://api.em.eaton.com/preview/docs) and the AbleEdge Smart Breaker developer portal (https://portal.em.eaton.com/). It is intended for cataloging and capability mapping in API Evangelist tooling, not as a substitute for the authoritative provider spec.
-
-    '
+  title: Eaton Smart Breaker Devices API
+  description: REST API (formerly the Energy Management / EM API) for Eaton AbleEdge Smart Breakers and Eaton Green Motion EV Smart Breaker Chargers.
   version: 1.0.0
   contact:
     name: Eaton AbleEdge Developer Portal
@@ -59,6 +51,8 @@ paths:
                 type: array
                 items:
                   $ref: '#/components/schemas/Device'
+      operationId: getApiV1Devices
+      x-operation-id-source: derived
   /api/v1/devices/{deviceId}:
     parameters:
     - $ref: '#/components/parameters/DeviceId'
@@ -73,6 +67,8 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/Device'
+      operationId: getApiV1DevicesByDeviceId
+      x-operation-id-source: derived
     delete:
       tags:
       - Devices
@@ -80,6 +76,8 @@ paths:
       responses:
         '204':
           description: Device decommissioned
+      operationId: deleteApiV1DevicesByDeviceId
+      x-operation-id-source: derived
   /api/v1/devices/{deviceId}/state:
     parameters:
     - $ref: '#/components/parameters/DeviceId'
@@ -94,28 +92,10 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/DeviceState'
+      operationId: getApiV1DevicesByDeviceIdState
+      x-operation-id-source: derived
 components:
   schemas:
-    DeviceState:
-      type: object
-      properties:
-        deviceId:
-          type: string
-          format: uuid
-        position:
-          type: string
-          enum:
-          - open
-          - closed
-          - tripped
-        connectivity:
-          type: string
-          enum:
-          - online
-          - offline
-        lastReportedAt:
-          type: string
-          format: date-time
     Device:
       type: object
       required:
@@ -139,12 +119,33 @@ components:
         serialNumber:
           type: string
         chargerStationId:
-          type: string
-          nullable: true
+          type:
+          - string
+          - 'null'
         name:
           type: string
         firmwareVersion:
           type: string
+    DeviceState:
+      type: object
+      properties:
+        deviceId:
+          type: string
+          format: uuid
+        position:
+          type: string
+          enum:
+          - open
+          - closed
+          - tripped
+        connectivity:
+          type: string
+          enum:
+          - online
+          - offline
+        lastReportedAt:
+          type: string
+          format: date-time
   parameters:
     DeviceId:
       in: path

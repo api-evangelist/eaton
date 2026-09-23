@@ -1,21 +1,14 @@
 {
   "provider": "eaton",
   "sources": [
-    "eaton-authorization-api-openapi.yml",
-    "eaton-device-commands-api-openapi.yml",
-    "eaton-devices-api-openapi.yml",
-    "eaton-energy-data-api-openapi.yml",
-    "eaton-ev-only-api-openapi.yml",
-    "eaton-events-api-openapi.yml",
-    "eaton-locations-api-openapi.yml",
-    "eaton-organizations-api-openapi.yml"
+    "_original/smart-breaker-openapi.yml"
   ],
   "outputs": [
     "eaton-authorization-api-openapi.yml",
     "eaton-device-commands-api-openapi.yml",
     "eaton-devices-api-openapi.yml",
-    "eaton-energy-data-api-openapi.yml",
     "eaton-ev-only-api-openapi.yml",
+    "eaton-energy-data-api-openapi.yml",
     "eaton-events-api-openapi.yml",
     "eaton-locations-api-openapi.yml",
     "eaton-organizations-api-openapi.yml"
@@ -23,6 +16,19 @@
   "archived": [],
   "errors": [],
   "warnings": [],
-  "notes": [],
-  "skipped": []
+  "notes": [
+    "sourced from openapi/_original/ (1 archived document(s)); previously refined output at the top level was skipped rather than re-split",
+    "smart-breaker-openapi.yml: upgraded openapi 3.0.3 -> OpenAPI 3.2.0",
+    "apis.yml register: already-registered"
+  ],
+  "skipped": [
+    "eaton-authorization-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "eaton-device-commands-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "eaton-devices-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "eaton-energy-data-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "eaton-ev-only-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "eaton-events-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "eaton-locations-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "eaton-organizations-api-openapi.yml: previously refined output, superseded by openapi/_original/"
+  ]
 }
