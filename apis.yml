@@ -43,7 +43,7 @@ tags:
 - Smart Breaker
 - EV Charging
 - Demand Response
-- Data-Center
+- Data Center
 - DCIM
 - PDU
 - UPS
@@ -73,6 +73,7 @@ tags_raw:
 - Energy
 - IoT
 - Sustainability
+- Data-Center
 created: '2026-05-23'
 modified: '2026-09-16'
 specificationVersion: '0.23'
@@ -116,7 +117,7 @@ apis:
   - Ambient Monitoring
   - Activities Of Daily Living
   - Artificial Intelligence
-  - Machine-Learning
+  - Machine Learning
   - Caregiving
   tags_raw:
   - Healthcare
@@ -125,6 +126,7 @@ apis:
   - AI
   - Machine Learning
   - Caregiving
+  - Machine-Learning
   properties:
   - type: Marketplace
     url: https://www.eaton.com/us/en-us/digital/marketplace/smart-ambient-monitoring-api.html
@@ -266,7 +268,7 @@ apis:
   - React
   - Angular
   - React Native
-  - Open-Source
+  - Open Source
   - Storybook
   tags_raw:
   - Design System
@@ -276,6 +278,7 @@ apis:
   - React Native
   - Open Source
   - Storybook
+  - Open-Source
   properties:
   - type: Documentation
     url: https://brightlayer-ui.github.io/
@@ -326,7 +329,8 @@ apis:
     url: https://www.eaton.com/us/en-us/company/news-insights/news-releases/2025/eaton-collaborates-with-autodesk-to-accelerate-building-digitalization.html
   - type: ProductPage
     url: https://www.eaton.com/us/en-us/digital/brightlayer.html
-- name: Eaton Beam Rubin DSX Platform
+- x-published: false
+  name: Eaton Beam Rubin DSX Platform
   description: 'Eaton + NVIDIA reference architecture announced March 2026 for end-to-end AI-factory deployment
     on NVIDIA''s Vera Rubin platform. Bundles supercapacitor-backed power, busbar power distribution,
     hot-aisle containment, and DC connectors with 800 VDC architecture, scaling from megawatts to hundreds
@@ -339,7 +343,7 @@ apis:
   - AI Factory
   - NVIDIA
   - 800 VDC
-  - Data-Center
+  - Data Center
   - Reference Architecture
   - Vera Rubin
   tags_raw:
@@ -349,6 +353,7 @@ apis:
   - Data Center
   - Reference Architecture
   - Vera Rubin
+  - Data-Center
   properties:
   - type: PressRelease
     url: https://www.eaton.com/us/en-us/company/news-insights/news-releases/2026/eaton-collaborates-with-nvidia-to-unveil-its-beam-rubin-dsx-platform.html

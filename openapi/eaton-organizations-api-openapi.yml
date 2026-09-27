@@ -56,14 +56,6 @@ paths:
       operationId: getApiV1OrganizationsByOrganizationId
       x-operation-id-source: derived
 components:
-  parameters:
-    OrganizationId:
-      in: path
-      name: organizationId
-      required: true
-      schema:
-        type: string
-        format: uuid
   schemas:
     Organization:
       type: object
@@ -73,6 +65,14 @@ components:
           format: uuid
         name:
           type: string
+  parameters:
+    OrganizationId:
+      in: path
+      name: organizationId
+      required: true
+      schema:
+        type: string
+        format: uuid
   securitySchemes:
     OAuth2:
       type: oauth2
