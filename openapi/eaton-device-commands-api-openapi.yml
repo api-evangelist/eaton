@@ -69,6 +69,19 @@ paths:
       x-operation-id-source: derived
 components:
   schemas:
+    DeviceCommand:
+      type: object
+      required:
+      - command
+      properties:
+        command:
+          type: string
+          enum:
+          - open
+          - close
+          - cycle
+        reason:
+          type: string
     BatchDeviceCommand:
       type: object
       required:
@@ -99,19 +112,6 @@ components:
         createdAt:
           type: string
           format: date-time
-    DeviceCommand:
-      type: object
-      required:
-      - command
-      properties:
-        command:
-          type: string
-          enum:
-          - open
-          - close
-          - cycle
-        reason:
-          type: string
     BatchCommandReceipt:
       type: object
       properties:

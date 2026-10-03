@@ -54,13 +54,6 @@ paths:
       operationId: postOauth2Token
       x-operation-id-source: derived
 components:
-  responses:
-    Unauthorized:
-      description: Missing or invalid credentials
-      content:
-        application/json:
-          schema:
-            $ref: '#/components/schemas/Error'
   schemas:
     AccessToken:
       type: object
@@ -88,6 +81,13 @@ components:
         details:
           type: object
           additionalProperties: true
+  responses:
+    Unauthorized:
+      description: Missing or invalid credentials
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/Error'
   securitySchemes:
     OAuth2:
       type: oauth2

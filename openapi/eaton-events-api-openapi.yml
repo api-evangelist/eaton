@@ -42,14 +42,6 @@ paths:
       operationId: getApiV1DevicesByDeviceIdEvents
       x-operation-id-source: derived
 components:
-  parameters:
-    DeviceId:
-      in: path
-      name: deviceId
-      required: true
-      schema:
-        type: string
-        format: uuid
   schemas:
     DeviceEvent:
       type: object
@@ -83,6 +75,14 @@ components:
           format: date-time
         message:
           type: string
+  parameters:
+    DeviceId:
+      in: path
+      name: deviceId
+      required: true
+      schema:
+        type: string
+        format: uuid
   securitySchemes:
     OAuth2:
       type: oauth2
