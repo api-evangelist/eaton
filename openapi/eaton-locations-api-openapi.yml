@@ -62,14 +62,6 @@ paths:
       operationId: getApiV1LocationsByLocationId
       x-operation-id-source: derived
 components:
-  parameters:
-    LocationId:
-      in: path
-      name: locationId
-      required: true
-      schema:
-        type: string
-        format: uuid
   schemas:
     Location:
       type: object
@@ -97,6 +89,14 @@ components:
               type: string
         timezone:
           type: string
+  parameters:
+    LocationId:
+      in: path
+      name: locationId
+      required: true
+      schema:
+        type: string
+        format: uuid
   securitySchemes:
     OAuth2:
       type: oauth2
