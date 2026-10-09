@@ -1,3 +1,8 @@
+# Provenance stamped 2026-10-07 (roadmap#943): written by an API Evangelist sweep (dated 2026-05-23 by the file itself), not
+# harvested from the provider. `method: generated` so the economics campaign may replace it with a
+# dated, verbatim transcription; every figure below is unverified until it does.
+method: generated
+generated: '2026-05-23'
 name: Eaton — Plans and Pricing
 description: |
   Plans, pricing tiers, and commercial-model summary for Eaton's digital and developer surface. Public pricing is largely opaque — most Brightlayer offerings and the Smart Breaker / EV Charger / Demand Response / Ambient Monitoring APIs are sold via the Brightlayer Experience Hub (https://eaton.byappdirect.com/) on subscription, with terms negotiated per-tenant rather than published. Where Eaton has made commercial structure public (e.g. Brightlayer 8.0 "tier-free" model), it is captured below.
@@ -87,3 +92,65 @@ plans:
       model: open-source
       license: see individual packages
       publicPrice: free
+x-canonical:
+  generated: '2026-10-08'
+  vocabulary: all/0-working/economics/plans-canonical.yml
+  models:
+  - free
+  - negotiated
+  units: []
+  plans:
+  - name: Brightlayer Power
+    access: other
+    model: free
+    model_how: derived
+    units: []
+    periods: []
+  - name: Brightlayer Distributed IT
+    access: other
+    model: free
+    model_how: derived
+    units: []
+    periods: []
+  - name: Brightlayer DCIM
+    access: other
+    model: free
+    model_how: derived
+    units: []
+    periods: []
+  - name: Brightlayer EPMS
+    access: other
+    model: free
+    model_how: derived
+    units: []
+    periods: []
+  - name: Smart Breaker API
+    access: other
+    model: unstated
+    model_how: derived
+    units: []
+    periods: []
+  - name: Electric Vehicle Smart Breaker Charger API
+    access: other
+    model: unstated
+    model_how: derived
+    units: []
+    periods: []
+  - name: Smart Ambient Monitoring API
+    access: other
+    model: negotiated
+    model_how: derived
+    units: []
+    periods: []
+  - name: CI-Data Open API (by WES)
+    access: other
+    model: unstated
+    model_how: derived
+    units: []
+    periods: []
+  - name: Brightlayer UI (Design System)
+    access: other
+    model: free
+    model_how: derived
+    units: []
+    periods: []

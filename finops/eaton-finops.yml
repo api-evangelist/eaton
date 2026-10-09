@@ -1,3 +1,12 @@
+# Provenance stamped 2026-10-07 (roadmap#943): written by an API Evangelist sweep (dated 2026-05-23 by the file itself), not
+# harvested from the provider. `method: generated` so the economics campaign may replace it with a
+# dated, verbatim transcription; every figure below is unverified until it does.
+# Coverage demoted 2026-10-07 (roadmap#942, PLAN.md Stage A): this file was written by an API Evangelist
+# sweep and names no billing unit, meters or pricing category read from the provider — it restates the
+# FinOps framework. It is `x-coverage: unmeasured`, and the FOCUS alignment it claimed has been removed.
+x-coverage: unmeasured
+method: generated
+generated: '2026-05-23'
 name: Eaton — FinOps Surface
 description: |
   Alignment of Eaton's commercial digital surface to the FinOps Foundation Framework and FOCUS data spec. Eaton is not a public cloud provider; its FinOps-relevant surface is (a) Brightlayer SaaS / on-premise subscriptions purchased via the Brightlayer Experience Hub, (b) per-API subscription metering (Smart Breaker, EV Charger, Ambient Monitoring), and (c) partner-set pricing for solutions listed on the Experience Hub.
