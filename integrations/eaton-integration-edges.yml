@@ -10,5 +10,24 @@ edges:
   evidence: https://openchargemap.org/site/poi?operatorid=42
   detected_by: sweep-automotive.py
   detected: '2026-10-13'
+- partner_name: Geotab (own)
+  partner: geotab
+  partner_match: mirror
+  mirror_match: domain
+  type: marketplace
+  relationship: platform-app
+  direction: third-party
+  channel: partner-built
+  marketplace: own
+  evidence: https://marketplace.geotab.com/partner/eaton/
+  mirror_of: geotab/integrations/geotab-integration-edges.yml
+  apps:
+  - Eaton
+  listing_count: 1
+  detected: '2026-10-14'
+  detected_by: mirror-platform-listings.py
 method: searched
-checked: []
+checked:
+- geotab/integrations/geotab-integration-edges.yml
+source:
+- geotab/integrations/geotab-integration-edges.yml
