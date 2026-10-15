@@ -53,3 +53,38 @@
   relationship: platform-app
   status: not-a-workflow
   arazzo: null
+- slug: eaton-bacnet-testing-laboratories-btl-listed
+  label: BACnet Testing Laboratories (BTL Listed)
+  partner_name: BACnet Testing Laboratories (BTL Listed)
+  category: building automation
+  type: register
+  channel: standard-directory
+  evidence: https://www.bacnetinternational.net/btl/?m=217
+  source: edge
+  relationship: standard-participant
+  contract_reference:
+    register: BTL Listing of Tested Products (bacnetinternational.net/btl)
+    spec_file: null
+    standard: BACnet (BTL)
+    role: btl-listed-manufacturer
+    registered_name: Eaton Corporation
+    website: http://www.eaton.com/Eaton/index.htm
+    matched_domain: eaton.com
+    matched_by: domain
+    btl_manufacturer_ids:
+    - '217'
+    certified_products:
+    - product: BACnet Application Specific Controller (B-ASC)
+      lapsed: false
+      listed_products:
+      - All products
+      - PowerXL DG1
+      - PowerXL DH1
+      - PowerXL DM1pro
+    signal_note: certified_products = one entry per BACnet DEVICE PROFILE with a BTL-listed product (the product
+      type); product names are context, never a count; current listing only (archives.php superseded listings not
+      read)
+    detected_by: sweep-building-automation.py
+    detected: '2026-10-15'
+  status: not-a-workflow
+  arazzo: null
