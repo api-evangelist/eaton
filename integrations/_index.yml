@@ -26,3 +26,30 @@
   relationship: platform-app
   status: not-a-workflow
   arazzo: null
+- slug: eaton-odva-cip-ethernet-ip
+  label: ODVA (CIP / EtherNet/IP)
+  partner_name: ODVA (CIP / EtherNet/IP)
+  category: CIP network products
+  type: register
+  channel: standard-directory
+  evidence: https://marketplace.odva.org/organizations/417-eaton-automation-gmbh-formerly-micro-innovation
+  source: edge
+  relationship: standard-participant
+  contract_reference:
+    register: ODVA Marketplace (marketplace.odva.org/organizations)
+    spec_file: null
+    standard: CIP (EtherNet/IP, DeviceNet, ControlNet, CompoNet)
+    role: ODVA licensed vendor (no listed product)
+    registered_name: Eaton Automation GmbH (formerly Micro Innovation)
+    website: http://www.eaton.com/Eaton/index.htm
+    matched_domain: eaton.com
+    matched_by: domain
+    licensed_technologies:
+    - EtherNet/IP
+    certified_products: []
+    signal_note: certified_products = one entry per TECHNOLOGY with a listed (Declaration of Conformity) product;
+      listed_products is context, never read
+    detected_by: sweep-industrial-robotics.py
+    detected: '2026-10-15'
+  status: not-a-workflow
+  arazzo: null
