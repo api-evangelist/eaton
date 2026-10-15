@@ -14,18 +14,6 @@
   relationship: endpoint-coverage
   status: not-a-workflow
   arazzo: null
-- slug: eaton-geotab-own
-  label: Geotab (own)
-  partner: geotab
-  partner_name: Geotab (own)
-  type: marketplace
-  marketplace: own
-  channel: partner-built
-  evidence: https://marketplace.geotab.com/partner/eaton/
-  source: edge
-  relationship: platform-app
-  status: not-a-workflow
-  arazzo: null
 - slug: eaton-odva-cip-ethernet-ip
   label: ODVA (CIP / EtherNet/IP)
   partner_name: ODVA (CIP / EtherNet/IP)
@@ -51,5 +39,17 @@
       listed_products is context, never read
     detected_by: sweep-industrial-robotics.py
     detected: '2026-10-15'
+  status: not-a-workflow
+  arazzo: null
+- slug: eaton-geotab-own
+  label: Geotab (own)
+  partner: geotab
+  partner_name: Geotab (own)
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  evidence: https://marketplace.geotab.com/partner/eaton/
+  source: edge
+  relationship: platform-app
   status: not-a-workflow
   arazzo: null
