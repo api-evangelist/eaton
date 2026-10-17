@@ -69,6 +69,29 @@ paths:
       x-operation-id-source: derived
 components:
   schemas:
+    BatchDeviceCommand:
+      type: object
+      required:
+      - deviceIds
+      - command
+      properties:
+        deviceIds:
+          type: array
+          items:
+            type: string
+            format: uuid
+        command:
+          $ref: '#/components/schemas/DeviceCommand'
+    BatchCommandReceipt:
+      type: object
+      properties:
+        batchId:
+          type: string
+          format: uuid
+        receipts:
+          type: array
+          items:
+            $ref: '#/components/schemas/CommandReceipt'
     CommandReceipt:
       type: object
       properties:
@@ -86,29 +109,6 @@ components:
         createdAt:
           type: string
           format: date-time
-    BatchCommandReceipt:
-      type: object
-      properties:
-        batchId:
-          type: string
-          format: uuid
-        receipts:
-          type: array
-          items:
-            $ref: '#/components/schemas/CommandReceipt'
-    BatchDeviceCommand:
-      type: object
-      required:
-      - deviceIds
-      - command
-      properties:
-        deviceIds:
-          type: array
-          items:
-            type: string
-            format: uuid
-        command:
-          $ref: '#/components/schemas/DeviceCommand'
     DeviceCommand:
       type: object
       required:
