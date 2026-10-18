@@ -11,22 +11,32 @@ capability_model:
   attribution: Turbo EA Capabilities by Vincent Verdet — Turbo EA, https://github.com/vincentmakes/turbo-ea-capabilities,
     CC BY 4.0
   notice: NOTICE
-edge_count: 2
+edge_count: 3
 edges:
 - tag: Energy Data
   spec_file: eaton-energy-data-api-openapi.yml
   capability_id: BC-1950.40
   capability_id_l1: BC-1950
   capability_name: Device Telemetry & Connectivity Management
-  confidence: 0.8
+  confidence: 0.85
   evidence: GET /api/v1/devices/{deviceId}/energy  Get Device Energy Telemetry; schema EnergyReading
-  reason: Explicitly device telemetry retrieval from connected electrical products.
+  reason: Operation summary explicitly delivers device telemetry from fielded smart breakers, matching
+    Device Telemetry & Connectivity Management.
 - tag: Device Commands
   spec_file: eaton-device-commands-api-openapi.yml
   capability_id: BC-1950
   capability_id_l1: BC-1950
   capability_name: Connected Product & Firmware Management
+  confidence: 0.75
+  evidence: POST /api/v1/devices/{deviceId}/commands  Send Device Command; schemas CommandReceipt, BatchDeviceCommand
+  reason: Remote command dispatch to fielded smart breakers/EV chargers is operation of connected electrical
+    products; evidence does not pin a single sub-capability (platform ops vs connectivity).
+- tag: EV Only
+  spec_file: eaton-ev-only-api-openapi.yml
+  capability_id: BC-1950
+  capability_id_l1: BC-1950
+  capability_name: Connected Product & Firmware Management
   confidence: 0.7
-  evidence: POST /api/v1/devices/{deviceId}/commands  Send Device Command; BatchDeviceCommand
-  reason: Remote command dispatch to fielded Eaton smart breakers / EV chargers is operational control
-    of connected electrical products; evidence does not pin a single sub-capability (platform ops vs connectivity).
+  evidence: GET /api/v1/ev/{deviceId}/sessions  List EV Charging Sessions; schema ChargingSession
+  reason: Charging session records retrieved from Eaton's connected EV charger products fall under connected
+    product field operations; the exact sub-capability (telemetry vs platform ops) is ambiguous.
