@@ -191,3 +191,71 @@
       P856 not contradicting (Kin 2026-10-20 decision 2)
   status: not-a-workflow
   arazzo: null
+- slug: eaton-open-compute-project-foundation
+  label: Open Compute Project Foundation
+  partner_name: Open Compute Project Foundation
+  category: open data center hardware standards membership
+  type: register
+  channel: standard-directory
+  evidence: https://www.opencompute.org/membership/membership-directory
+  source: edge
+  relationship: standard-participant
+  contract_reference:
+    register: Open Compute Project membership directory (opencompute.org/membership/membership-directory)
+    standard: Open Compute Project (OCP) specifications
+    spec_file: null
+    role: ocp-member
+    registered_name: Eaton
+    register_id: http://www.eaton.com
+    matched_domain: eaton.com
+    matched_by: domain
+    member_since: '2025'
+    signal_note: 'participation only: corporate membership of the Open Compute Project (level recorded as partner_tier);
+      membership is not product conformance (OCP Accepted / Inspired products are a separate marketplace, not read)'
+    detected_by: sweep-data-center-tier-certification.py
+    detected: '2026-10-21'
+  status: not-a-workflow
+  arazzo: null
+- slug: eaton-open-compute-project-marketplace
+  label: Open Compute Project marketplace
+  partner_name: Open Compute Project marketplace
+  category: data-center hardware recognition
+  type: register
+  channel: standard-directory
+  evidence: https://www.opencompute.org/marketplace/experience-centers-validation/ocp-experience-center-toronto-ca-hosted-by-eaton/
+  source: edge
+  relationship: standard-participant
+  contract_reference:
+    register: Open Compute Project marketplace (opencompute.org/products; /wp-json/wp/v2/marketplace + /companies)
+    standard: Open Compute Project
+    spec_file: null
+    role: ocp-recognised-product-vendor
+    registered_name: Eaton
+    register_id: https://www.opencompute.org/members/eaton/
+    matched_domain: eaton.com
+    matched_by: domain
+    listings: 4
+    recognised_listings: 2
+    products_sample:
+    - Eaton Open Rack v3 (ORV3)
+    - Eaton Open Rack v3 (ORV3) Power Shelf
+    signal_note: certified_products = one entry per product type (OCP recognition + most specific marketplace segment)
+      among OCP-recognised listings; unrecognised listings are listing alone (participation). The REST data marks
+      no listing archived, so lapsed is false. Listing counts are context, never counted
+    detected_by: sweep-semiconductor-consortia.py
+    detected: '2026-10-21'
+    certified_products:
+    - product: 'OCP Accepted: Open Rack v3 (ORv3)'
+      recognition: OCP Accepted
+      product_type: Open Rack v3 (ORv3)
+      lapsed: false
+      listings: 1
+      newest_listing: '2023-10-12'
+    - product: 'OCP Accepted: Power Shelves'
+      recognition: OCP Accepted
+      product_type: Power Shelves
+      lapsed: false
+      listings: 1
+      newest_listing: '2023-10-12'
+  status: not-a-workflow
+  arazzo: null
