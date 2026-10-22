@@ -338,6 +338,43 @@ edges:
     - Eaton Corporation
   detected_by: sweep-energy-star-certified-products.py
   first_seen: '2026-10-22'
+- partner_name: CVE Program (CVE Numbering Authorities)
+  partner: null
+  partner_match: register
+  type: register
+  channel: standard-directory
+  relationship: standard-participant
+  direction: partner-built
+  evidence: https://www.cve.org/PartnerInformation/ListofPartners/partner/Eaton
+  category: Vulnerability disclosure (CVE Numbering Authority)
+  contract_reference:
+    register: CVE Program CNA list (github.com/CVEProject/cve-website CNAsList.json @ 239d3d9b68e0)
+    standard: CVE Program CNA Operational Rules (CVE Numbering Authority)
+    spec_file: null
+    role: cve-numbering-authority
+    registered_name: Eaton
+    matched_domain: eaton.com
+    matched_by: domain
+    cna_id: CNA-2019-0014
+    cna_short_name: Eaton
+    cna_types:
+    - Vendor
+    cna_roles:
+    - CNA
+    scope: Eaton issues only.
+    top_level_root: MITRE Corporation
+    root: n/a
+    security_advisories:
+    - https://www.eaton.com/us/en-us/company/news-insights/cybersecurity/security-notifications.html
+    disclosure_policy:
+    - https://www.eaton.com/us/en-us/company/news-insights/cybersecurity/vulnerabilitydisclosure.html
+    country: Ireland
+    signal_note: listing as a CVE Numbering Authority = participation (a public commitment to assign CVE IDs and
+      publish advisories for its scope); never a count of CVEs
+    detected_by: sweep-vulnerability-disclosure-cna.py
+    detected: '2026-10-22'
+  detected_by: sweep-vulnerability-disclosure-cna.py
+  first_seen: '2026-10-22'
 method: searched
 checked:
 - geotab/integrations/geotab-integration-edges.yml
@@ -373,5 +410,8 @@ checked:
 - https://data.energystar.gov/api/views/metadata/v1
 - https://data.energystar.gov/resource/8wj2-sec8.json
 - https://www.energystar.gov/productfinder/
+- https://api.first.org/data/v1/teams
+- https://raw.githubusercontent.com/CVEProject/cve-website/dev/src/assets/data/CNAsList.json
+- https://www.cisa.gov/sites/default/files/feeds/known_exploited_vulnerabilities.json
 source:
 - geotab/integrations/geotab-integration-edges.yml
