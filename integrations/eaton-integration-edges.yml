@@ -284,6 +284,60 @@ edges:
   detected_by: sweep-semiconductor-consortia.py
   first_seen: '2026-10-21'
   partner_tier: OCP Accepted
+- partner_name: US EPA ENERGY STAR
+  partner: null
+  partner_match: register
+  type: register
+  channel: standard-directory
+  relationship: standard-participant
+  direction: partner-built
+  evidence: https://data.energystar.gov/d/8wj2-sec8
+  category: ENERGY STAR product certification
+  contract_reference:
+    register: ENERGY STAR Model Index, all currently certified models (data.energystar.gov/resource/8wj2-sec8)
+    standard: ENERGY STAR (US EPA product specifications)
+    spec_file: null
+    role: energy-star-partner
+    registered_name: EATON CORPORATION
+    register_id: https://data.energystar.gov/d/8wj2-sec8
+    matched_domain: eaton.com
+    matched_by: domain
+    certified_products:
+    - product: Electric Vehicle Supply Equipment
+      product_type: Electric Vehicle Supply Equipment
+      lapsed: false
+      brands:
+      - EATON
+      first_certified: '2023-02-13'
+      connected: true
+      connected_protocols:
+      - Cellular
+      - Wi-Fi or Gigabit Ethernet
+    - product: Uninterruptible Power Supplies
+      product_type: Uninterruptible Power Supplies
+      lapsed: false
+      brands:
+      - EATON
+      - EATON TRIPP LITE SERIES, TRIPP.LITE, EATON
+      - Eaton Brand UPS
+      - TRIPPLITE
+      - Tripp Lite
+      first_certified: '2013-05-14'
+    connected_product_types:
+    - Electric Vehicle Supply Equipment
+    signal_note: 'certified_products = ONE entry per ENERGY STAR product category with a currently certified model
+      (the Model Index lists current certifications only, so lapsed is False; delisted models drop out); connected:
+      true where the category''s dataset flags connected / network capability for this partner''s models (Smart
+      Thermostats and Connected lighting are connected by definition). Brands are context; model counts are never
+      counted.'
+    detected_by: sweep-energy-star-certified-products.py
+    detected: '2026-10-22'
+    identity: wikidata Q48872 'Eaton Corporation' P856 https://www.eaton.com/us/en-us.html
+    identity_source: wikidata P856 (labelled provenance step; Kin 2026-10-15 decision 1)
+    other_registrations:
+    - Eaton Corporation
+  detected_by: sweep-energy-star-certified-products.py
+  first_seen: '2026-10-22'
 method: searched
 checked:
 - geotab/integrations/geotab-integration-edges.yml
@@ -316,5 +370,8 @@ checked:
 - https://www.opencompute.org/products
 - https://www.opencompute.org/wp-json/wp/v2/companies
 - https://www.opencompute.org/wp-json/wp/v2/marketplace
+- https://data.energystar.gov/api/views/metadata/v1
+- https://data.energystar.gov/resource/8wj2-sec8.json
+- https://www.energystar.gov/productfinder/
 source:
 - geotab/integrations/geotab-integration-edges.yml
