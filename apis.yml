@@ -606,6 +606,9 @@ apis:
   - type: KnowledgeCenter
     url: https://www.eaton.com/us/en-us/products/electrical-circuit-protection/circuit-breakers/ableedge-smart-breaker-help-center.html
 common:
+- type: CapabilityMap
+  url: capabilities/eaton-capability-edges.yml
+  name: Eaton Business Capability Map
 - type: Website
   url: https://eaton.com
 - type: AgenticAccess
