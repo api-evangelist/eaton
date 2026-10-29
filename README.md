@@ -1,4 +1,4 @@
-# Eaton (eaton)
+# Eaton
 
 <!-- API-EVANGELIST-PROVENANCE:BEGIN -->
 > ### About this repository
@@ -66,361 +66,197 @@
 
 Eaton Corporation plc (NYSE: ETN) is a global intelligent-power-management company with operations across electrical, aerospace, vehicle, and eMobility segments. Its digital surface centers on Brightlayer — a software portfolio for data centers, utilities, industrial, buildings, and mobility — together with a developer program that exposes REST APIs for smart breakers, EV chargers, ambient monitoring, demand response, PDUs, and Brightlayer Operations Insight. Eaton is a strategic partner to NVIDIA on the Beam Rubin DSX 800 VDC AI-factory platform and to Autodesk on the Brightlayer Digital Energy Twin.
 
-**APIs.json:** [https://github.com/api-evangelist/eaton](https://github.com/api-evangelist/eaton)
-
-## Tags
-
-- Power Management
-- Electrical
-- Smart Breaker
-- EV Charging
-- Demand Response
-- Data Center
-- DCIM
-- PDU
-- UPS
-- Utility
-- Industrial
-- Building
-- Mobility
-- AI Factory
-- Energy
-- IoT
-- Sustainability
+**Areas:** Power Management · Electrical · Smart Breaker · EV Charging · Demand Response · Data Center · DCIM · PDU · UPS · Utility · Industrial · Buildings
 
-## Timestamps
+## Eaton on APIs.io
 
-- **Created:** 2026-05-23
-- **Modified:** 2026-05-23
-
-## APIs
+Everything profiled for Eaton is published on APIs.io rather than in this repository. Start at the provider page — **[apis.io/providers/eaton/](https://apis.io/providers/eaton/)** — or go straight to one of the APIs or properties below.
 
-### Eaton Smart Breaker API
+### APIs (19)
 
-RESTful API (formerly the Energy Management / EM API) that lets developers commission, monitor, and control Eaton AbleEdge Smart Breakers and the Eaton Green Motion EV Smart Breaker Chargers. Provides real-time and historical access to energy data (current, voltage, frequency, power, energy consumption), device state, location/panel modeling, and batch device commands. Devices are typed via `hardwareType` (`emcb`, `ev-emcb`). Authentication uses an `Em-Api-Subscription-Key` header alongside an OAuth2 Bearer token (Client ID + secret with 1-hour token TTL).
+- [Eaton EV Smart Breaker Charger API](https://apis.io/apis/eaton/eaton-ev-smart-breaker-charger-api/) — Subset of the Smart Breaker API surface scoped to Level-2 Green Motion EV charger devices (`hardwareType: ev-emcb`). Adds session-management,…
+- [Eaton Smart Ambient Monitoring API](https://apis.io/apis/eaton/eaton-smart-ambient-monitoring-api/) — Healthcare-targeted subscription API that derives an "Activities of Daily Living" signal for residents of long-term care, assisted-living, and remote-care…
+- [Brightlayer Demand Response Service API](https://apis.io/apis/eaton/brightlayer-demand-response-service-api/) — RESTful, HTTP-based API for utilities running Eaton Demand Response Management System (DRMS) programs. Exposes secure operations to interact with, schedule,…
+- [Brightlayer Operations Insight APIs](https://apis.io/apis/eaton/brightlayer-operations-insight-apis/) — Family of REST APIs that let partners and customers extend the monitoring capabilities of Eaton power infrastructure (UPS, PDU, transfer switches, breakers,…
+- [Brightlayer RESTful API (On-Premise)](https://apis.io/apis/eaton/brightlayer-restful-api-on-premise/) — RESTful API surface of Brightlayer 8.0 (on-premise platform) covering the unified Power, Distributed IT, DCIM, and EPMS product offerings. Documented in the…
+- [Eaton Rack PDU G4 REST API](https://apis.io/apis/eaton/eaton-rack-pdu-g4-rest-api/) — RESTful API exposed by the Network Management Card (NMC) of Eaton's Rack PDU G4 (formerly Tripp Lite). Lets DCIM systems and IT operators provision outlets,…
+- [CI-Data Open API (by WES)](https://apis.io/apis/eaton/ci-data-open-api-by-wes/) — Critical Infrastructure Data (CI-Data) Open API listed on the Brightlayer Experience Hub from solution-partner WES. Provides a RESTful interface to Eaton's…
+- [Brightlayer UI (Design System)](https://apis.io/apis/eaton/brightlayer-ui-design-system/) — Eaton's open-source design system and component library used to build Brightlayer applications. Ships themes, icons, progress icons, symbols, workflows,…
+- [Eaton easyE4 JSON API](https://apis.io/apis/eaton/eaton-easye4-json-api/) — JSON API on the Eaton easyE4 PLC / control relay that exposes I/O state, NET-IDs, markers, and configuration over HTTP for OT/IT integrations. Documented in…
+- [Brightlayer Digital Energy Twin (Autodesk)](https://apis.io/apis/eaton/brightlayer-digital-energy-twin-autodesk/) — AI-powered digital energy twin co-developed with Autodesk that integrates Eaton's Brightlayer energy software with Autodesk Tandem to simulate, monitor, and…
+- [Eaton Beam Rubin DSX Platform](https://apis.io/apis/eaton/eaton-beam-rubin-dsx-platform/) — Eaton + NVIDIA reference architecture announced March 2026 for end-to-end AI-factory deployment on NVIDIA's Vera Rubin platform. Bundles…
+- [Eaton Authorization API](https://apis.io/apis/eaton/eaton-authorization-api/) — OAuth2 token issuance and user/service-account authentication.
+- [Eaton Device Commands API](https://apis.io/apis/eaton/eaton-device-commands-api/) — Per-device and batch device-control commands.
+- [Eaton Devices API](https://apis.io/apis/eaton/eaton-devices-api/) — Smart breakers and EV chargers (emcb, ev-emcb).
+- [Eaton Energy Data API](https://apis.io/apis/eaton/eaton-energy-data-api/) — Real-time and historical energy telemetry.
+- [Eaton EV Only API](https://apis.io/apis/eaton/eaton-ev-only-api/) — Operations supported only by Eaton EV Smart Breaker Chargers.
+- [Eaton Events API](https://apis.io/apis/eaton/eaton-events-api/) — Device events, alarms, and notifications.
+- [Eaton Locations API](https://apis.io/apis/eaton/eaton-locations-api/) — Sites, buildings, and panels grouping devices.
+- [Eaton Organizations API](https://apis.io/apis/eaton/eaton-organizations-api/) — Tenant organizations that own devices and users.
 
-- **Human URL:** [https://api.em.eaton.com/docs](https://api.em.eaton.com/docs)
-- **Base URL:** `https://api.em.eaton.com`
-
-#### Tags
-
-- Smart Breaker
-- EV Charging
-- Energy Data
-- AbleEdge
-- Device Control
-- REST
+### Published properties
 
-#### Properties
+Each property below is a page on APIs.io carrying the machine-readable artifact and what it says.
 
-- [Documentation](https://api.em.eaton.com/docs)
-- [API Reference](https://api.em.eaton.com/docs)
-- [Getting Started](https://portal.em.eaton.com/tutorial)
-- [Portal](https://portal.em.eaton.com/)
-- [Developer Portal](https://ableedge-portal.eaton.com/)
-- [Sandbox](https://api.em.eaton.com/preview/docs)
-- [Authentication](https://api.em.eaton.com/docs)
-- [Marketplace](https://www.eaton.com/us/en-us/digital/marketplace/smart-breaker-api.html)
-- [Tutorials](https://portal.em.eaton.com/tutorial)
-- [Knowledge Center](https://www.eaton.com/us/en-us/products/electrical-circuit-protection/circuit-breakers/ableedge-smart-breaker-help-center.html)
-- [OpenAPI](openapi/smart-breaker-openapi.yml) — [OpenAPI Specification](https://spec.openapis.org/oas/latest.html)
-- [Postman Collection](collections/smart-breaker.postman_collection.json) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
-- [Open Collection](collections/smart-breaker.opencollection.json) — [Open Collection 1.0](https://schema.opencollection.com/opencollection/v1.0.0.json)
-- [Capability](capabilities/smart-breaker.yaml)
+#### Agentic access (1)
 
-### Eaton EV Smart Breaker Charger API
+Which operations an agent can call, which act, and which need a human in the loop.
 
-Subset of the Smart Breaker API surface scoped to Level-2 Green Motion EV charger devices (`hardwareType: ev-emcb`). Adds session-management, charge-control, and EV-specific telemetry on top of the shared device/location model. Operations tagged "EV Only" in the OpenAPI are gated to ev-emcb devices.
+- [Eaton Agentic Access](https://apis.io/agentic-access/eaton/eaton-agentic-access/)
 
-- **Human URL:** [https://api.em.eaton.com/docs](https://api.em.eaton.com/docs)
-- **Base URL:** `https://api.em.eaton.com`
+#### JSON Schema (4)
 
-#### Tags
+The data models the API reads and writes.
 
-- EV Charging
-- Level 2
-- Green Motion
-- Charge Sessions
-- Energy Management
+- [ChargingSession](https://apis.io/schemas/eaton/smart-breaker-charging-session/)
+- [Device](https://apis.io/schemas/eaton/smart-breaker-device/)
+- [DeviceEvent](https://apis.io/schemas/eaton/smart-breaker-device-event/)
+- [EnergyReading](https://apis.io/schemas/eaton/smart-breaker-energy-reading/)
 
-#### Properties
+#### JSON Structure (1)
 
-- [Documentation](https://api.em.eaton.com/docs)
-- [Marketplace](https://www.eaton.com/br/en-us/digital/marketplace/electric-vehicle-smart-breaker-charger-api-.html)
-- [Product Page](https://www.eaton.com/us/en-us/catalog/electrical-circuit-protection/ev-charging-smart-breakers.html)
-- [Authentication](https://api.em.eaton.com/docs)
-- [Capability](capabilities/ev-charging.yaml)
-- [Postman Collection](collections/smart-breaker.postman_collection.json) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
-- [Open Collection](collections/smart-breaker.opencollection.json) — [Open Collection 1.0](https://schema.opencollection.com/opencollection/v1.0.0.json)
+Data models expressed in JSON Structure.
 
-### Eaton Smart Ambient Monitoring API
+- [Smart Breaker Device Structure](https://apis.io/json-structure/eaton/smart-breaker-device-structure/)
 
-Healthcare-targeted subscription API that derives an "Activities of Daily Living" signal for residents of long-term care, assisted-living, and remote-care environments by applying proprietary ML/AI to the energy-usage signatures of household appliances behind an Eaton smart circuit breaker. Distributed via the Brightlayer Experience Hub on a subscription basis to owners/users of Eaton smart breakers.
+#### JSON-LD (1)
 
-- **Human URL:** [https://www.eaton.com/us/en-us/digital/marketplace/smart-ambient-monitoring-api.html](https://www.eaton.com/us/en-us/digital/marketplace/smart-ambient-monitoring-api.html)
-- **Base URL:** `https://api.em.eaton.com`
+Linked-data contexts for the provider's vocabulary.
 
-#### Tags
+- [Eaton Context](https://apis.io/jsonld/eaton/eaton-context/)
 
-- Healthcare
-- Ambient Monitoring
-- Activities Of Daily Living
-- AI
-- Machine Learning
-- Caregiving
+#### Vocabulary (1)
 
-#### Properties
+The provider's domain terms, defined.
 
-- [Marketplace](https://www.eaton.com/us/en-us/digital/marketplace/smart-ambient-monitoring-api.html)
-- [Press Release](https://www.eaton.com/us/en-us/company/news-insights/news-releases/2023/eaton-launches-smart-ambient-monitoring-api.html)
-- [Use Cases](https://www.eaton.com/us/en-us/markets/healthcare/long-term-care-facilities/Smart-ambient-monitoring.html)
-- [Capability](capabilities/ambient-monitoring.yaml)
-- [Postman Collection](collections/smart-breaker.postman_collection.json) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
-- [Open Collection](collections/smart-breaker.opencollection.json) — [Open Collection 1.0](https://schema.opencollection.com/opencollection/v1.0.0.json)
+- [Eaton Vocabulary](https://apis.io/vocabularies/eaton/eaton-vocabulary/)
 
-### Brightlayer Demand Response Service API
+#### Examples (5)
 
-RESTful, HTTP-based API for utilities running Eaton Demand Response Management System (DRMS) programs. Exposes secure operations to interact with, schedule, and curtail Eaton Cellular and Wi-Fi load-control switches deployed at the consumer edge (AC, water heater, irrigation, large motor loads). Targets DRMS platform integrations and program-administrator workflows including enrollment, asset management, event dispatch, and post-event measurement & validation.
+Example requests and responses.
 
-- **Human URL:** [https://www.eaton.com/us/en-us/digital/brightlayer/brightlayer-utilities-suite/Demand-response-management-software.html](https://www.eaton.com/us/en-us/digital/brightlayer/brightlayer-utilities-suite/Demand-response-management-software.html)
+- [Smart Breaker Energy Telemetry Example](https://apis.io/examples/eaton/smart-breaker-energy-telemetry-example/)
+- [Smart Breaker List Devices Example](https://apis.io/examples/eaton/smart-breaker-list-devices-example/)
+- [Smart Breaker List Sessions Example](https://apis.io/examples/eaton/smart-breaker-list-sessions-example/)
+- [Smart Breaker Oauth Token Example](https://apis.io/examples/eaton/smart-breaker-oauth-token-example/)
+- [Smart Breaker Send Command Example](https://apis.io/examples/eaton/smart-breaker-send-command-example/)
 
-#### Tags
+#### Collections (9)
 
-- Demand Response
-- Utility
-- Grid
-- Load Control
-- DRMS
-- DR Events
+Postman and Open Collection request collections.
 
-#### Properties
+- [Eaton Smart Breaker Authorization API](https://apis.io/collections/eaton/open-eaton-authorization-api/)
+- [Eaton Smart Breaker Authorization Device Commands API](https://apis.io/collections/eaton/open-eaton-device-commands-api/)
+- [Eaton Smart Breaker Authorization Devices API](https://apis.io/collections/eaton/open-eaton-devices-api/)
+- [Eaton Smart Breaker Authorization Energy Data API](https://apis.io/collections/eaton/open-eaton-energy-data-api/)
+- [Eaton Smart Breaker Authorization EV Only API](https://apis.io/collections/eaton/open-eaton-ev-only-api/)
+- [Eaton Smart Breaker Authorization Events API](https://apis.io/collections/eaton/open-eaton-events-api/)
+- [Eaton Smart Breaker Authorization Locations API](https://apis.io/collections/eaton/open-eaton-locations-api/)
+- [Eaton Smart Breaker Authorization Organizations API](https://apis.io/collections/eaton/open-eaton-organizations-api/)
+- [Eaton Smart Breaker API](https://apis.io/collections/eaton/open-smart-breaker/)
 
-- [Documentation](https://www.eaton.com/us/en-us/digital/brightlayer/brightlayer-utilities-suite/Demand-response-management-software.html)
-- [A P I Specification Catalog](https://www.eaton.com/us/en-us/digital/for-developer-partners/API_Specification_Catalog.html)
-- [Product Page](https://www.eaton.com/us/en-us/products/utility-grid-solutions/demand-response.html)
-- [Analytics](https://www.eaton.com/us/en-us/digital/brightlayer/brightlayer-utilities-suite/dr-analytics.html)
-- [Capability](capabilities/demand-response.yaml)
-- [Postman Collection](collections/smart-breaker.postman_collection.json) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
-- [Open Collection](collections/smart-breaker.opencollection.json) — [Open Collection 1.0](https://schema.opencollection.com/opencollection/v1.0.0.json)
+#### Governance rules (2)
 
-### Brightlayer Operations Insight APIs
+Spectral rulesets for the provider's contracts.
 
-Family of REST APIs that let partners and customers extend the monitoring capabilities of Eaton power infrastructure (UPS, PDU, transfer switches, breakers, meters) into their own applications via the Brightlayer monitoring & management service. Surfaced through the Eaton API Specification Catalog on the developer-partners portal.
+- [Eaton — jsonschema rules](https://apis.io/rules/eaton/eaton-jsonschema-spectral-rules/)
+- [Eaton — smart breaker rules](https://apis.io/rules/eaton/smart-breaker-rules/)
 
-- **Human URL:** [https://www.eaton.com/us/en-us/digital/for-developer-partners/API_Specification_Catalog.html](https://www.eaton.com/us/en-us/digital/for-developer-partners/API_Specification_Catalog.html)
+#### Security (2)
 
-#### Tags
+Authentication, trust centre, and vulnerability disclosure.
 
-- Operations Insight
-- Monitoring
-- Power Infrastructure
-- Brightlayer
-- REST
+- [Eaton Authentication](https://apis.io/security/eaton/eaton-authentication/)
+- [Eaton Domain Security](https://apis.io/security/eaton/eaton-domain-security/)
 
-#### Properties
+#### OAuth scopes (1)
 
-- [A P I Specification Catalog](https://www.eaton.com/us/en-us/digital/for-developer-partners/API_Specification_Catalog.html)
-- [Developer Portal](https://www.eaton.com/us/en-us/digital/for-developer-partners/developer_portal_get_started.html)
-- [Getting Started](https://www.eaton.com/us/en-us/digital/for-developer-partners/developer_portal_get_started.html)
-- [F A Q](https://www.eaton.com/us/en-us/digital/for-developer-partners/developer_portal_FAQ.html)
-- [Postman Collection](collections/smart-breaker.postman_collection.json) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
-- [Open Collection](collections/smart-breaker.opencollection.json) — [Open Collection 1.0](https://schema.opencollection.com/opencollection/v1.0.0.json)
+The permissions the API asks for.
 
-### Brightlayer RESTful API (On-Premise)
+- [Eaton Scopes](https://apis.io/scopes/eaton/eaton-scopes/)
 
-RESTful API surface of Brightlayer 8.0 (on-premise platform) covering the unified Power, Distributed IT, DCIM, and EPMS product offerings. Documented in the "Brightlayer RESTful API User Guide, Release 8.0.0, October 2025" PDF distributed with the on-premise platform.
+#### Plans and pricing (1)
 
-- **Human URL:** [https://www.eaton.com/us/en-us/catalog/software/brightlayer-power.html](https://www.eaton.com/us/en-us/catalog/software/brightlayer-power.html)
+Published plans, tiers and prices.
 
-#### Tags
+- [Eaton Plans Pricing](https://apis.io/plans/eaton/eaton-plans-pricing/)
 
-- Brightlayer
-- DCIM
-- EPMS
-- On-Premise
-- REST
-- Power Management
+#### Rate limits (1)
 
-#### Properties
+Published request limits.
 
-- [API Reference](https://www.eaton.com/content/dam/eaton/products/brightlayer/brightlayer-power/eaton-brightlayer-restful-api-user-guide-v8.pdf)
-- [Release Notes](https://www.eaton.com/content/dam/eaton/digital/brightlayer-data-centers-suite/suite-assets/brochures/eaton-brightlayer-v8-0-0-release-notes.pdf)
-- [Administration Guide](https://www.eaton.com/content/dam/eaton/digital/brightlayer-data-centers-suite/suite-assets/brochures/eaton-brightlayer-v8-0-0-administration-guide.pdf)
-- [Product Page](https://www.eaton.com/us/en-us/catalog/software/brightlayer-power.html)
-- [Versioning](https://www.eaton.com/us/en-us/company/news-insights/blog/brightlayer-8-0-release-whatsnew.html)
-- [Postman Collection](collections/smart-breaker.postman_collection.json) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
-- [Open Collection](collections/smart-breaker.opencollection.json) — [Open Collection 1.0](https://schema.opencollection.com/opencollection/v1.0.0.json)
+- [Eaton Rate Limits](https://apis.io/rate-limits/eaton/eaton-rate-limits/)
 
-### Eaton Rack PDU G4 REST API
+#### FinOps (1)
 
-RESTful API exposed by the Network Management Card (NMC) of Eaton's Rack PDU G4 (formerly Tripp Lite). Lets DCIM systems and IT operators provision outlets, query environmental sensors, schedule power cycling, and pull telemetry. NMC also speaks SNMPv3 and Modbus TCP for legacy integrations.
+What the API costs to run, by operation.
 
-- **Human URL:** [https://knowledgehub.eaton.com/s/article/API-documentation-for-G4-PDUs](https://knowledgehub.eaton.com/s/article/API-documentation-for-G4-PDUs)
+- [Eaton Finops](https://apis.io/finops/eaton/eaton-finops/)
 
-#### Tags
+## Where to find this API
 
-- PDU
-- Rack
-- DCIM
-- NMC
-- Outlet Control
-- Telemetry
+Links to the company's own pages. This repository publishes no copy of their specifications — the canonical document is theirs and lives at the URLs below.
 
-#### Properties
-
-- [Documentation](https://knowledgehub.eaton.com/s/article/API-documentation-for-G4-PDUs)
-- [Product Page](https://www.eaton.com/us/en-us/products/backup-power-ups-surge-it-power-distribution/power-distribution-for-it-equipment/rack-pdu-g4.html)
-- [User Guide](https://assets.tripplite.com/owners-manual/eaton-g4-rack-pdu-gnm-firmware-user-guide.pdf)
-- [Postman Collection](collections/smart-breaker.postman_collection.json) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
-- [Open Collection](collections/smart-breaker.opencollection.json) — [Open Collection 1.0](https://schema.opencollection.com/opencollection/v1.0.0.json)
-
-### CI-Data Open API (by WES)
-
-Critical Infrastructure Data (CI-Data) Open API listed on the Brightlayer Experience Hub from solution-partner WES. Provides a RESTful interface to Eaton's Electrical Power Monitoring System for real-time data and alarm states, intended for partner-built analytics, BMS, and DCIM integrations.
-
-- **Human URL:** [https://www.eaton.com/us/en-us/digital/marketplace/ci-data-open-api-by-wes.html](https://www.eaton.com/us/en-us/digital/marketplace/ci-data-open-api-by-wes.html)
-
-#### Tags
-
-- EPMS
-- Power Monitoring
-- Alarms
-- Partner Solution
-- Marketplace
-
-#### Properties
-
-- [Marketplace](https://www.eaton.com/us/en-us/digital/marketplace/ci-data-open-api-by-wes.html)
-- [Partner](https://www.eaton.com/us/en-us/digital/brightlayer-experience-hub.html)
-- [Postman Collection](collections/smart-breaker.postman_collection.json) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
-- [Open Collection](collections/smart-breaker.opencollection.json) — [Open Collection 1.0](https://schema.opencollection.com/opencollection/v1.0.0.json)
-
-### Brightlayer UI (Design System)
-
-Eaton's open-source design system and component library used to build Brightlayer applications. Ships themes, icons, progress icons, symbols, workflows, Storybook addons, and CLI templates for React, Angular, and React Native. Most package repos were consolidated into a monorepo in 2024; the public documentation site remains at brightlayer-ui.github.io.
-
-- **Human URL:** [https://brightlayer-ui.github.io/](https://brightlayer-ui.github.io/)
-- **Base URL:** `https://www.npmjs.com/org/brightlayer-ui`
-
-#### Tags
-
-- Design System
-- UI Components
-- React
-- Angular
-- React Native
-- Open Source
-- Storybook
-
-#### Properties
-
-- [Documentation](https://brightlayer-ui.github.io/)
-- [GitHub Organization](https://github.com/brightlayer-ui)
-- [Package Registry](https://www.npmjs.com/org/brightlayer-ui)
-- [Postman Collection](collections/smart-breaker.postman_collection.json) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
-- [Open Collection](collections/smart-breaker.opencollection.json) — [Open Collection 1.0](https://schema.opencollection.com/opencollection/v1.0.0.json)
-
-### Eaton easyE4 JSON API
-
-JSON API on the Eaton easyE4 PLC / control relay that exposes I/O state, NET-IDs, markers, and configuration over HTTP for OT/IT integrations. Documented in the easyE4 JSON API user manual.
-
-- **Human URL:** [https://easye4.info/downloads/dokumentation/json_api.pdf](https://easye4.info/downloads/dokumentation/json_api.pdf)
-
-#### Tags
-
-- PLC
-- Control Relay
-- easyE4
-- OT
-- JSON
-- Industrial
-
-#### Properties
-
-- [API Reference](https://easye4.info/downloads/dokumentation/json_api.pdf)
-- [Postman Collection](collections/smart-breaker.postman_collection.json) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
-- [Open Collection](collections/smart-breaker.opencollection.json) — [Open Collection 1.0](https://schema.opencollection.com/opencollection/v1.0.0.json)
-
-### Brightlayer Digital Energy Twin (Autodesk)
-
-AI-powered digital energy twin co-developed with Autodesk that integrates Eaton's Brightlayer energy software with Autodesk Tandem to simulate, monitor, and optimize energy use, electrical system performance, and infrastructure-upgrade impact across commercial buildings and data centers. Exposes the modelled facility as a programmatic asset twin for predictive maintenance and energy management.
-
-- **Human URL:** [https://www.eaton.com/us/en-us/company/news-insights/news-releases/2025/eaton-collaborates-with-autodesk-to-accelerate-building-digitalization.html](https://www.eaton.com/us/en-us/company/news-insights/news-releases/2025/eaton-collaborates-with-autodesk-to-accelerate-building-digitalization.html)
-
-#### Tags
-
-- Digital Twin
-- Energy Twin
-- AI
-- Building Lifecycle
-- Autodesk Tandem
-- Predictive Maintenance
-
-#### Properties
-
-- [Press Release](https://www.eaton.com/us/en-us/company/news-insights/news-releases/2025/eaton-collaborates-with-autodesk-to-accelerate-building-digitalization.html)
-- [Product Page](https://www.eaton.com/us/en-us/digital/brightlayer.html)
-- [Postman Collection](collections/smart-breaker.postman_collection.json) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
-- [Open Collection](collections/smart-breaker.opencollection.json) — [Open Collection 1.0](https://schema.opencollection.com/opencollection/v1.0.0.json)
-
-### Eaton Beam Rubin DSX Platform
-
-Eaton + NVIDIA reference architecture announced March 2026 for end-to-end AI-factory deployment on NVIDIA's Vera Rubin platform. Bundles supercapacitor-backed power, busbar power distribution, hot-aisle containment, and DC connectors with 800 VDC architecture, scaling from megawatts to hundreds of megawatts. Not a public REST API today, but a strategic digital/physical product surface that ties Brightlayer telemetry to AI-factory orchestration.
-
-- **Human URL:** [https://www.eaton.com/us/en-us/company/news-insights/news-releases/2026/eaton-collaborates-with-nvidia-to-unveil-its-beam-rubin-dsx-platform.html](https://www.eaton.com/us/en-us/company/news-insights/news-releases/2026/eaton-collaborates-with-nvidia-to-unveil-its-beam-rubin-dsx-platform.html)
-
-#### Tags
-
-- AI Factory
-- NVIDIA
-- 800 VDC
-- Data Center
-- Reference Architecture
-- Vera Rubin
-
-#### Properties
-
-- [Press Release](https://www.eaton.com/us/en-us/company/news-insights/news-releases/2026/eaton-collaborates-with-nvidia-to-unveil-its-beam-rubin-dsx-platform.html)
-- [Related Release](https://www.eaton.com/us/en-us/company/news-insights/news-releases/2025/eaton-unveils-next-generation-architecture.html)
-- [Postman Collection](collections/smart-breaker.postman_collection.json) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
-- [Open Collection](collections/smart-breaker.opencollection.json) — [Open Collection 1.0](https://schema.opencollection.com/opencollection/v1.0.0.json)
-
-## Common Properties
-
-- [Portal](https://www.eaton.com/us/en-us/digital/brightlayer.html)
-- [Developer Portal](https://developer.eaton.com/get-started)
-- [Developer Portal Alt](https://www.eaton.com/us/en-us/digital/for-developer-partners/developer_portal_get_started.html)
-- [A P I Specification Catalog](https://www.eaton.com/us/en-us/digital/for-developer-partners/API_Specification_Catalog.html)
-- [Marketplace](https://eaton.byappdirect.com/)
-- [Marketplace Catalog](https://www.eaton.com/us/en-us/digital/brightlayer-experience-hub.html)
-- [Hub](https://www.eaton.com/us/en-us/digital/brightlayer-experience-hub.html)
-- [Sign Up](https://www.eaton.com/us/en-us/digital/for-developer-partners/developer_portal_get_started.html)
-- [F A Q](https://www.eaton.com/us/en-us/digital/for-developer-partners/developer_portal_FAQ.html)
-- [Knowledge Center](https://knowledgehub.eaton.com/)
-- [Terms of Service](https://www.eaton.com/us/en-us/company/policies-and-statements/brightlayer-experience-hub-terms-and-conditions.html)
-- [Privacy Policy](https://www.eaton.com/us/en-us/company/policies-and-statements/privacy-policy.html)
-- [Trust Center](https://www.eaton.com/us/en-us/company/policies-and-statements.html)
-- [Blog](https://www.eaton.com/us/en-us/company/news-insights.html)
-- [Release Notes](https://www.eaton.com/us/en-us/company/news-insights/blog/brightlayer-8-0-release-whatsnew.html)
-- [News Releases](https://www.eaton.com/us/en-us/company/news-insights/news-releases.html)
-- [YouTube](https://www.youtube.com/@eatonvideos)
-- [LinkedIn](https://www.linkedin.com/company/eaton)
-- [X (Twitter)](https://x.com/ETN_Electrical)
-- [GitHub Organization](https://github.com/brightlayer-ui)
-- [Support](https://www.eaton.com/us/en-us/support.html)
-- [Contact](https://www.eaton.com/us/en-us/company/contact-us.html)
-- [Professional Services](https://www.eaton.com/us/en-us/services.html)
-- [Branding](https://www.eaton.com/us/en-us/company/about-us/our-brand.html)
+- [Website](https://eaton.com)
 - [Pricing](https://eaton.byappdirect.com/)
-- [Plans](plans/eaton-plans-pricing.yml)
-- [Rate Limits](rate-limits/eaton-rate-limits.yml)
-- [Fin Ops](finops/eaton-finops.yml)
-- [Vocabulary](vocabulary/eaton-vocabulary.yml)
-- [JSON-LD](json-ld/eaton-context.jsonld) — [JSON-LD](https://www.w3.org/TR/json-ld11/)
-- [L L Ms Txt](https://developer.eaton.com/llms.txt)
+- [Support](https://www.eaton.com/us/en-us/support.html)
+- [Blog](https://www.eaton.com/us/en-us/company/news-insights.html)
+- [Trust centre](https://www.eaton.com/us/en-us/company/policies-and-statements.html)
+- [Terms of service](https://www.eaton.com/us/en-us/company/policies-and-statements/brightlayer-experience-hub-terms-and-conditions.html)
+- [Privacy policy](https://www.eaton.com/us/en-us/company/policies-and-statements/privacy-policy.html)
+- [GitHub](https://github.com/brightlayer-ui)
 
-## Maintainers
+## API Evangelist rating
 
-**FN:** Kin Lane
-**Email:** info@apievangelist.com
-**URL:** https://github.com/api-evangelist
+**Kin Score 43.8** — developing · rubric 0.25.0 · scored 2026-10-23
+
+| Facet | Score |
+|---|---|
+| Discoverability | 64.3 |
+| Contract quality | 48.3 |
+| Contract governance | 27.3 |
+| Operational transparency | 18.4 |
+| Developer ergonomics | 40.5 |
+| Access clarity | 46.1 |
+
+**Agent readiness 21.7** — agent-aware
+
+| Agent-readiness dimension | Result |
+|---|---|
+| Spec Presence | yes |
+| Agentic Access | derived (partial credit) |
+| Reversibility Documented | — |
+| MCP Server | — |
+| Auth Clarity | negotiable (partial credit) |
+| Idempotency | — |
+| Error Semantics | — |
+| OpenAPI Examples | — |
+| Rate Limit Signal | derived (partial credit) |
+| Event Surface Described | — |
+| Agent Skills | — |
+| Well Known Catalog | — |
+| Consent Identity | — |
+| Agent Card | — |
+| Dry Run Mode | — |
+| Delegated Identity | — |
+| Protected Resource Metadata | — |
+| Dynamic Client Registration | — |
+| Agentic Commerce | — |
+| Pagination Ratio | — |
+| Operation Distinctiveness | distinct |
+
+**Regulatory alignment 33.2** — Energy & Utilities
+
+The rubric is published at [github.com/api-evangelist/kin-score](https://github.com/api-evangelist/kin-score). The per-check breakdown behind these numbers — which checks were earned, partial or missed — along with score history and how this provider compares to its peers, is available at [apis.io/providers/eaton/](https://apis.io/providers/eaton/).
+
+## How this profile is made
+
+API Evangelist profiles a company's public API surface the way a developer would find it: the website, developer portal and documentation, the specifications it publishes, its public repositories, and its pricing, status and changelog pages. From that it derives the properties above — contracts split per API, workflows, schemas, collections, governance rules, plans and rate limits — and scores them against the published [Kin Score rubric](https://github.com/api-evangelist/kin-score).
+
+The artifacts are published on [APIs.io](https://apis.io), not in this repository. This repository is the public record for Eaton: the place to say something is wrong, missing or out of date, and to ask for a re-score or a removal.
+
+## Open an issue
+
+- **Something about this listing** — a wrong description, a missing API, a stale artifact or a question about the rating: [open an issue on this repository](https://github.com/api-evangelist/eaton/issues/new).
+- **A new API, or one that is not in the catalog yet** — [submit it on APIs.io](https://apis.io/add/).
+- **Anything else** — [the APIs.io inbox](https://github.com/api-search/inbox/issues/new) or [info@apievangelist.com](mailto:info@apievangelist.com).
